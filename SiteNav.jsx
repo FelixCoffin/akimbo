@@ -1,7 +1,6 @@
 /* global React */
 // SiteNav — sticky warm-translucent nav: wordmark left, text links + one pill CTA right.
 function SiteNav({ current = "home", onNav, tone = "onDark", hideOnScroll = false }) {
-  const { Logo } = window.AkimboCreativeHausDesignSystem_10a51d;
   const onDark = tone === "onDark";
   const onImage = tone === "onImage";
   const forceRed = tone === "red";
