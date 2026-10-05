@@ -1,0 +1,327 @@
+#marketing-site-root { --akimbo-cream: #F7F4E8; font-family: var(--font-body); color: var(--text-body); }
+#marketing-site-root a { color: var(--link); }
+#marketing-site-root a:hover { color: var(--link-hover); }
+/* Mobile / narrow-viewport layer for the Akimbo marketing site.
+   The page is built with inline styles, so this layer overrides them by
+   matching on the inline style string. Desktop is untouched. */
+
+#marketing-site-root { overflow-x: clip; container-type: inline-size; container-name: akroot; }
+
+@container akroot (max-width: 860px) {
+  #marketing-site-root img,
+  #marketing-site-root video { max-width: 100%; }
+
+  /* ---- page gutters: 72px / 56px -> 20px ---- */
+  #marketing-site-root [style*="px 72px"],
+  #marketing-site-root [style*="px 56px"],
+  #marketing-site-root [style*="0 72px"],
+  #marketing-site-root [style*="0 56px"],
+  #marketing-site-root [style*="padding: 72px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  #marketing-site-root [style*="left: 56px"] { left: 20px !important; }
+  #marketing-site-root [style*="right: 56px"] { right: 20px !important; }
+  #marketing-site-root [style*="right: 24px"] { right: 12px !important; }
+
+  /* ---- multi-column grids collapse ---- */
+  #marketing-site-root [style*="grid-template-columns: repeat(3"],
+  #marketing-site-root [style*="grid-template-columns: 1fr 1fr"],
+  #marketing-site-root [style*="grid-template-columns: 1fr auto 1fr"],
+  #marketing-site-root [style*="grid-template-columns: repeat(2"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    text-align: left !important;
+  }
+  /* frames mosaic: 6-col -> 2-col, every cell one column wide */
+  #marketing-site-root [style*="repeat(6, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  #marketing-site-root [style*="repeat(6, 1fr)"] > * { grid-column: span 1 !important; aspect-ratio: 4 / 5 !important; }
+
+  /* ---- wide flex rows stack ---- */
+  #marketing-site-root [style*="display: flex"][style*="gap: 64px"],
+  #marketing-site-root [style*="display: flex"][style*="gap: 56px"],
+  #marketing-site-root [style*="display: flex"][style*="gap: 48px"],
+  #marketing-site-root [style*="display: flex"][style*="gap: 40px"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 28px !important;
+  }
+
+  /* ---- display type steps down ---- */
+  #marketing-site-root [style*="font-size: 104px"],
+  #marketing-site-root [style*="font-size: 100px"],
+  #marketing-site-root [style*="font-size: 96px"] { font-size: 44px !important; line-height: 1.04 !important; }
+  #marketing-site-root [style*="font-size: 84px"],
+  #marketing-site-root [style*="font-size: 80px"],
+  #marketing-site-root [style*="font-size: 76px"],
+  #marketing-site-root [style*="font-size: 75px"] { font-size: 40px !important; line-height: 1.05 !important; letter-spacing: -0.01em !important; }
+  #marketing-site-root [style*="font-size: 64px"],
+  #marketing-site-root [style*="font-size: 56px"] { font-size: 34px !important; line-height: 1.06 !important; }
+  #marketing-site-root [style*="font-size: 48px"],
+  #marketing-site-root [style*="font-size: 44px"],
+  #marketing-site-root [style*="font-size: 40px"] { font-size: 28px !important; }
+  #marketing-site-root [style*="font-size: 36px"],
+  #marketing-site-root [style*="font-size: 32px"] { font-size: 24px !important; }
+  #marketing-site-root [style*="font-size: 28px"],
+  #marketing-site-root [style*="font-size: 26px"] { font-size: 20px !important; }
+  #marketing-site-root [style*="font-size: 20px"] { font-size: 17px !important; }
+  #marketing-site-root [style*="font-size: 18px"] { font-size: 16px !important; }
+
+  /* ---- oversized fixed widths ---- */
+  #marketing-site-root [style*="width: 900px"],
+  #marketing-site-root [style*="width: 600px"],
+  #marketing-site-root [style*="width: 280px"] { width: 100% !important; height: auto !important; }
+
+  /* ---- scale-up transforms are too big on a phone ---- */
+  #marketing-site-root [style*="scale(1.5)"],
+  #marketing-site-root [style*="scale(1.2)"] { transform: none !important; }
+
+  /* ---- nav ---- */
+
+  /* ---- hero: shorter, and the CTA sits under the headline ---- */
+  #marketing-site-root [data-hero] { height: 78vh !important; }
+  #marketing-site-root [data-hero] [style*="bottom: 58px"] { bottom: 24px !important; }
+  #marketing-site-root [data-hero] [style*="bottom: 48px"] { bottom: 84px !important; right: 20px !important; }
+
+  /* ---- clients marquee ---- */
+  #marketing-site-root [style*="gap: 104px"] { gap: 48px !important; padding-left: 48px !important; }
+  #marketing-site-root [style*="height: 84px"] { height: 52px !important; }
+
+  /* ---- tall vertical media caps ---- */
+  #marketing-site-root [style*="height: 415px"] { height: auto !important; width: 200px !important; }
+}
+
+
+@container akroot (max-width: 1040px) {
+  #marketing-site-root [data-hero] [style*="bottom: 58px"] { transform: scale(1) !important; bottom: 44px !important; }
+  #marketing-site-root [data-hero] [style*="max-width: 700px"] { max-width: 52% !important; font-size: 58px !important; }
+}
+
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-ev="hero"], #marketing-site-root [data-ev="approach"] { grid-template-columns: 1fr !important; gap: 28px !important; }
+  #marketing-site-root [data-ev="approach"] [style*="sticky"] { position: static !important; }
+  #marketing-site-root [data-ev="collage"] { grid-template-columns: 1fr !important; }
+  #marketing-site-root [data-ev="collage"] > :first-child { min-height: 0 !important; aspect-ratio: 4 / 5; }
+  #marketing-site-root [data-ev="collage-grid"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; grid-template-rows: none !important; gap: 10px !important; }
+  #marketing-site-root [data-ev="collage-grid"] > * { grid-column: span 1 !important; grid-row: auto !important; aspect-ratio: 1; }
+  #marketing-site-root [data-ev="collage-grid"] > :first-child { grid-column: span 2 !important; aspect-ratio: 4 / 3; }
+  #marketing-site-root [data-ev="cards"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+  #marketing-site-root [data-ev="cards"] [style*="padding: 36px 44px"] { padding: 24px 22px 26px !important; }
+  #marketing-site-root [data-ev="cards"] [style*="font-size: 38px"] { font-size: 28px !important; }
+  #marketing-site-root [data-ev="cards"] [style*="justify-content: space-between"] { flex-direction: column-reverse !important; align-items: flex-start !important; gap: 14px !important; }
+  #marketing-site-root [data-ev="cards"] [style*="justify-content: flex-end"] { justify-content: flex-start !important; }
+  #marketing-site-root [data-ev="stills"], #marketing-site-root [data-evd="stills"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 10px !important; }
+  #marketing-site-root [style*="border-left: 3px solid"][style*="font-size: 38px"] { font-size: 24px !important; margin-top: 72px !important; box-sizing: border-box !important; max-width: 100% !important; }
+  #marketing-site-root [style*="font-size: 82px"] { font-size: 40px !important; line-height: 1.05 !important; }
+  #marketing-site-root [data-ev="cta"][style], #marketing-site-root [data-evd="cta"][style] { flex-direction: row !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important; padding-top: 72px !important; padding-bottom: 80px !important; }
+  #marketing-site-root [data-ev="cta"][style] > :first-child > :first-child, #marketing-site-root [data-evd="cta"][style] > :first-child > :first-child { font-size: 32px !important; line-height: 1 !important; }
+  #marketing-site-root [data-ev="cta"][style] > :first-child > :last-child, #marketing-site-root [data-evd="cta"][style] > :first-child > :last-child { margin-top: 28px !important; transform: scale(1.4) !important; }
+  #marketing-site-root [data-ev="cta"][style] > :last-child, #marketing-site-root [data-evd="cta"][style] > :last-child { max-width: 38% !important; align-self: center !important; }
+  #marketing-site-root footer[style] { padding: 40px 20px 28px !important; }
+  #marketing-site-root footer [data-ft="grid"][style] { grid-template-columns: 1fr auto 1fr !important; gap: 14px !important; text-align: initial !important; flex-direction: row !important; }
+  #marketing-site-root footer [data-ft="grid"] img { width: 100% !important; max-width: 100px !important; height: auto !important; }
+  #marketing-site-root footer [data-ft="grid"] > :nth-child(2) { text-align: center !important; }
+  #marketing-site-root footer [data-ft="grid"] > :nth-child(2) > :first-child { font-size: 19px !important; white-space: nowrap !important; line-height: 1.2 !important; }
+  #marketing-site-root footer [data-ft="grid"] > :nth-child(2) > a { font-size: 16px !important; padding: 5px 16px !important; margin-top: 10px !important; }
+  #marketing-site-root footer [data-ft="grid"] > :nth-child(3) { align-items: flex-end !important; gap: 4px !important; }
+  #marketing-site-root footer [data-ft="grid"] > :nth-child(3) a { font-size: 14px !important; }
+  #marketing-site-root footer [style*="margin-top: 44px"] { margin-top: 28px !important; font-size: 10px !important; }
+  #marketing-site-root [data-evd="mosaic"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; grid-auto-rows: calc((100cqw - 50px) / 2 * 1.15) !important; gap: 10px !important; }
+  #marketing-site-root [data-evd="mosaic"] > * { grid-column: span 1 !important; grid-row: span 1 !important; }
+  #marketing-site-root [data-evd="mosaic"] > [data-wide] { grid-column: span 2 !important; }
+  #marketing-site-root [data-evd="title"] { flex-direction: column !important; gap: 24px !important; }
+  #marketing-site-root [data-evd="title"] > :last-child { justify-content: flex-start !important; padding-top: 0 !important; }
+  #marketing-site-root [data-evd="phones"] { padding: 48px 12px !important; justify-content: space-around !important; }
+  #marketing-site-root [data-evd="phones"] > * { max-width: 44% !important; flex-basis: 44% !important; border-radius: 30px !important; padding: 7px !important; }
+  #marketing-site-root [data-evd="phones"] > * > :first-child { border-radius: 24px !important; }
+  #marketing-site-root [data-evd="phones"] > * > :last-child { top: 13px !important; width: 48px !important; height: 14px !important; }
+  #marketing-site-root [data-evd="phones"] button { padding: 7px 10px !important; font-size: 9px !important; bottom: 12px !important; gap: 5px !important; }
+  #marketing-site-root [data-evd="stills"] { }
+  #marketing-site-root [data-evd="stills"] { padding: 0 !important; }
+}
+@container akroot (max-width: 560px) {
+  #marketing-site-root [style*="font-size: 82px"] { font-size: 32px !important; }
+}
+@container akroot (max-width: 560px) {
+  #marketing-site-root [style*="grid-template-columns: repeat(3"] { gap: 16px !important; }
+  #marketing-site-root [style*="font-size: 104px"],
+  #marketing-site-root [style*="font-size: 100px"],
+  #marketing-site-root [style*="font-size: 96px"] { font-size: 36px !important; }
+  #marketing-site-root [style*="font-size: 84px"],
+  #marketing-site-root [style*="font-size: 80px"],
+  #marketing-site-root [style*="font-size: 76px"],
+  #marketing-site-root [style*="font-size: 75px"] { font-size: 32px !important; }
+}
+
+/* ---- Page-level mobile layouts: keep Bo beside its copy like desktop, calmer type ---- */
+@container akroot (max-width: 860px) {
+  /* home hero */
+  #marketing-site-root [data-m="hero-h"][style] { font-size: 40px !important; line-height: 1.02 !important; max-width: 100% !important; }
+  #marketing-site-root [data-m="hero-text"][style] { left: 20px !important; right: 20px !important; bottom: 92px !important; }
+  #marketing-site-root [data-m="hero-cta"][style] { left: 20px !important; right: auto !important; bottom: 28px !important; transform: none !important; }
+
+  /* home statement band: headline + Bo side by side, paragraph full width under */
+  #marketing-site-root [data-m="stmt"][style] { display: grid !important; grid-template-columns: minmax(0,1fr) 36% !important; column-gap: 14px !important; align-items: end !important; }
+  #marketing-site-root [data-m="stmt-text"] { display: contents !important; }
+  #marketing-site-root [data-m="stmt-text"] > :first-child { grid-column: 1; grid-row: 1; font-size: 40px !important; line-height: 1.02 !important; }
+  #marketing-site-root [data-m="stmt-text"] > p { grid-column: 1 / -1; grid-row: 2; font-size: 15px !important; margin-top: 22px !important; }
+  #marketing-site-root [data-m="stmt"] > img[style] { grid-column: 2; grid-row: 1; width: 100% !important; align-self: end; }
+  #marketing-site-root [data-m="scroll-cue"][style] { padding: 56px 0 40px !important; }
+
+  /* home clients */
+  #marketing-site-root [data-m="clients"][style] { height: auto !important; min-height: 0 !important; padding: 56px 0 !important; gap: 32px !important; justify-content: flex-start !important; }
+  #marketing-site-root [data-m="clients"] > :nth-child(2)[style] { margin-top: 0 !important; font-size: 40px !important; white-space: nowrap !important; line-height: 1.1 !important; }
+  #marketing-site-root [data-m="clients"] > :nth-child(3)[style] { margin-bottom: 0 !important; }
+
+  /* home about */
+  #marketing-site-root [data-m="values"][style] { display: grid !important; grid-template-columns: minmax(0,1fr) 34% !important; column-gap: 14px !important; row-gap: 0 !important; align-items: end !important; padding-top: 64px !important; padding-bottom: 72px !important; }
+  #marketing-site-root [data-m="values-text"] { display: contents !important; }
+  #marketing-site-root [data-m="values-text"] > * { grid-column: 1 / -1; }
+  #marketing-site-root [data-m="values-text"] > :nth-child(1)[style] { grid-column: 1; grid-row: 1; margin-bottom: 8px !important; }
+  #marketing-site-root [data-m="values-text"] > :nth-child(2) { grid-column: 1; grid-row: 2; font-size: 32px !important; }
+  #marketing-site-root [data-m="values-text"] > p { font-size: 15px !important; }
+  #marketing-site-root [data-m="values-text"] > p:first-of-type { margin-top: 24px !important; }
+  #marketing-site-root [data-m="values-text"] > p + p { margin-top: 14px !important; }
+  #marketing-site-root [data-m="values-text"] > :last-child[style] { margin-top: 28px !important; }
+  #marketing-site-root [data-m="values"] > img[style], #marketing-site-root [data-m="values"] > :last-child[style] { grid-column: 2; grid-row: 1 / span 2; width: 100% !important; height: auto !important; margin-top: 0 !important; align-self: end; }
+
+  /* our work */
+  #marketing-site-root [data-m="work-title"][style] { flex-direction: row !important; align-items: flex-end !important; gap: 12px !important; }
+  #marketing-site-root [data-m="work-title"] > :first-child { font-size: 44px !important; line-height: 1.02 !important; }
+  #marketing-site-root [data-m="work-title"] > :last-child { width: 30% !important; max-width: 120px !important; height: auto !important; }
+  #marketing-site-root [data-m="work-row"][style] { grid-template-columns: 1fr !important; }
+  #marketing-site-root [data-m="work-row"] > :last-child[style] { padding: 24px 22px 26px !important; }
+  #marketing-site-root [data-m="work-row"] [style*="font-size: 38px"] { font-size: 28px !important; }
+
+  /* who we are */
+  #marketing-site-root [data-m="team-stmt"][style] { grid-template-columns: minmax(0,1fr) 36% !important; column-gap: 14px !important; row-gap: 24px !important; align-items: end !important; padding-top: 56px !important; padding-bottom: 56px !important; }
+  #marketing-site-root [data-m="team-stmt-text"] { display: contents !important; }
+  #marketing-site-root [data-m="team-stmt-text"] > :first-child { grid-column: 1; grid-row: 1; font-size: 32px !important; }
+  #marketing-site-root [data-m="team-stmt-text"] > :last-child { grid-column: 1 / -1; grid-row: 2; font-size: 15px !important; }
+  #marketing-site-root [data-m="team-bo"][style] { grid-column: 2; grid-row: 1; min-height: 0 !important; aspect-ratio: 3 / 4; }
+  #marketing-site-root [data-m="team-grid"][style] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 22px 12px !important; }
+  #marketing-site-root [data-m="team-grid"] [style*="font-size: 19px"] { font-size: 15px !important; }
+  #marketing-site-root [data-m="team-grid"] [style*="font-size: 13.5px"] { font-size: 12.5px !important; }
+
+  /* what we do */
+  #marketing-site-root [data-m="wwd-hero"][style] { grid-template-columns: 1fr !important; gap: 22px !important; }
+  #marketing-site-root [data-m="wwd-hero"] > :first-child { font-size: 40px !important; line-height: 1.04 !important; }
+  #marketing-site-root [data-m="svc"][style] { grid-template-columns: 1fr !important; gap: 36px !important; }
+  #marketing-site-root [data-m="svc-head"][style] { position: static !important; display: grid !important; grid-template-columns: minmax(0,1fr) 40% !important; column-gap: 14px; align-items: end; align-self: stretch !important; }
+  #marketing-site-root [data-m="svc-head"] > :first-child { font-size: 40px !important; }
+  #marketing-site-root [data-m="svc-bo"][style] { margin-top: 0 !important; max-width: 100% !important; }
+  #marketing-site-root .ak-svc-card[style] { padding: 22px 20px !important; column-gap: 16px !important; }
+  #marketing-site-root .ak-svc-card [style*="font-size: 30px"] { font-size: 22px !important; }
+  #marketing-site-root .ak-svc-card p { font-size: 14.5px !important; }
+
+  /* contact: copy left, Bo on the bike right, like desktop */
+  #marketing-site-root [data-m="contact"][style] { flex-direction: row !important; padding: 0 0 0 20px !important; gap: 12px !important; min-height: 0 !important; }
+  #marketing-site-root [data-m="contact"] > :first-child[style] { flex: 1 1 auto !important; min-width: 0 !important; gap: 36px !important; padding: 40px 0 48px !important; }
+  #marketing-site-root [data-m="contact"] [style*="font-size: 48px"] { font-size: 26px !important; }
+  #marketing-site-root [data-m="contact"] a[style*="font-size: 25px"] { font-size: 16px !important; white-space: nowrap; }
+  #marketing-site-root [data-m="contact"] svg { width: 18px !important; height: 18px !important; }
+  #marketing-site-root [data-m="contact"] [style*="gap: 16px"] { gap: 12px !important; }
+  #marketing-site-root [data-m="contact"] > :last-child[style] { flex: 0 0 40% !important; }
+  #marketing-site-root [data-m="contact"] > :last-child img[style] { inset: auto !important; left: 50% !important; top: 50% !important; width: 290% !important; height: auto !important; max-width: none !important; object-fit: contain !important; transform: translate(-50%, -50%) !important; }
+}
+@container akroot (max-width: 400px) {
+  #marketing-site-root [data-m="hero-h"][style] { font-size: 36px !important; }
+  #marketing-site-root [data-m="stmt-text"] > :first-child { font-size: 34px !important; }
+  #marketing-site-root [data-m="work-title"] > :first-child { font-size: 40px !important; }
+  #marketing-site-root [data-m="wwd-hero"] > :first-child { font-size: 36px !important; }
+  #marketing-site-root [data-m="svc-head"] > :first-child { font-size: 34px !important; }
+  #marketing-site-root [data-m="contact"] a[style*="font-size: 25px"] { font-size: 15px !important; }
+}
+
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-m="stmt"] { margin-top: 0; }
+  #marketing-site-root div[style*="padding: 120px 72px 0"] { padding-top: 48px !important; }
+}
+
+/* Futura headlines hug the left on mobile instead of running into the middle */
+@container akroot (max-width: 860px) {
+  #marketing-site-root :where([style*="font-family: var(--font-headline)"]):where(:not(.ak-svc-card *, .ak-work-tile *, [data-ev="cards"] *, footer *, [data-m="contact"] *)) {
+    max-width: 80% !important;
+    text-wrap: balance;
+  }
+  /* already sharing a row with Bo: the column is the limit */
+  #marketing-site-root [data-m="values-text"] > [style*="font-family: var(--font-headline)"],
+  #marketing-site-root [data-m="team-stmt-text"] > [style*="font-family: var(--font-headline)"],
+  #marketing-site-root [data-m="svc-head"] > [style*="font-family: var(--font-headline)"],
+  #marketing-site-root [data-ev="cta"] [style*="font-family: var(--font-headline)"],
+  #marketing-site-root [data-evd="cta"] [style*="font-family: var(--font-headline)"],
+  #marketing-site-root [data-m="stmt-text"] > [style*="font-family: var(--font-headline)"] {
+    max-width: 100% !important;
+  }
+}
+
+/* Events CTA (mobile): the old rules targeted :last-child as the button, but the fine print is last now */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-ev="cta"][style] > :first-child > p[style],
+  #marketing-site-root [data-evd="cta"][style] > :first-child > p[style] { transform: none !important; margin-top: 18px !important; font-size: 14.5px !important; line-height: 1.55 !important; max-width: 100% !important; }
+  #marketing-site-root [data-ev="cta"][style] > :first-child > p[style]:last-child,
+  #marketing-site-root [data-evd="cta"][style] > :first-child > p[style]:last-child { margin-top: 22px !important; font-size: 12.5px !important; line-height: 1.45 !important; }
+  #marketing-site-root [data-ev="cta"] .ak-cta-grow[style],
+  #marketing-site-root [data-evd="cta"] .ak-cta-grow[style] { margin-top: 24px !important; transform: scale(1.1) !important; transform-origin: left top !important; }
+  #marketing-site-root [data-ev="cta"] .ak-cta-grow[style]:hover,
+  #marketing-site-root [data-evd="cta"] .ak-cta-grow[style]:hover { transform: scale(1.18) !important; }
+  #marketing-site-root [data-ev="cta"][style] > :first-child,
+  #marketing-site-root [data-evd="cta"][style] > :first-child { min-width: 0 !important; flex: 1 1 auto !important; }
+}
+@container akroot (max-width: 400px) {
+  #marketing-site-root [data-ev="cta"][style] > :first-child > p[style]:not(:last-child) { font-size: 13.5px !important; }
+}
+
+/* Events CTA (mobile): bigger Bo, narrower copy column */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-ev="cta"][style],
+  #marketing-site-root [data-evd="cta"][style] { gap: 10px !important; }
+  #marketing-site-root [data-ev="cta"][style] > :first-child,
+  #marketing-site-root [data-evd="cta"][style] > :first-child { flex: 0 1 52% !important; max-width: 52% !important; }
+  #marketing-site-root [data-ev="cta"][style] > :last-child,
+  #marketing-site-root [data-evd="cta"][style] > :last-child { flex: 1 1 48% !important; max-width: 48% !important; }
+  #marketing-site-root [data-ev="cta"][style] > :last-child img,
+  #marketing-site-root [data-evd="cta"][style] > :last-child img { width: 100% !important; max-width: none !important; height: auto !important; }
+}
+
+/* Events CTA (mobile): keep the button on one line inside the narrower column */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-ev="cta"] .ak-cta-grow[style],
+  #marketing-site-root [data-evd="cta"] .ak-cta-grow[style] { transform: none !important; max-width: 100% !important; }
+  #marketing-site-root [data-ev="cta"] .ak-cta-grow[style]:hover,
+  #marketing-site-root [data-evd="cta"] .ak-cta-grow[style]:hover { transform: scale(1.06) !important; }
+  #marketing-site-root [data-ev="cta"] .ak-cta-grow button,
+  #marketing-site-root [data-evd="cta"] .ak-cta-grow button { white-space: nowrap !important; padding: 14px 20px !important; font-size: 13px !important; letter-spacing: 0.12em !important; }
+}
+@container akroot (max-width: 400px) {
+  #marketing-site-root [data-ev="cta"] .ak-cta-grow button,
+  #marketing-site-root [data-evd="cta"] .ak-cta-grow button { padding: 13px 16px !important; font-size: 12px !important; letter-spacing: 0.1em !important; }
+}
+
+/* Events CTA (mobile): smaller fine print with more air above it */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-ev="cta"][style] > :first-child > p[style]:last-child,
+  #marketing-site-root [data-evd="cta"][style] > :first-child > p[style]:last-child { margin-top: 36px !important; font-size: 11px !important; line-height: 1.45 !important; }
+}
+
+/* Events (mobile): tighter gap between the hero photo and How we work */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-ev="hero-photo"][style] { padding-bottom: 40px !important; }
+  #marketing-site-root [data-ev="approach-band"][style] { padding-top: 48px !important; }
+}
+
+/* Event detail: three-still rows stay one row on mobile */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-evd="stills"][data-count="3"][style] { grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 10px !important; }
+}
+
+/* Event detail (mobile): tag pills sit to the right of the title at one consistent small size */
+@container akroot (max-width: 860px) {
+  #marketing-site-root [data-evd="title"][style] { display: grid !important; grid-template-columns: minmax(0,1fr) auto !important; column-gap: 14px !important; row-gap: 0 !important; align-items: start !important; }
+  #marketing-site-root [data-evd="title"] > :first-child { display: contents !important; }
+  #marketing-site-root [data-evd="title"] > :first-child > :nth-child(1) { grid-column: 1; grid-row: 1; }
+  #marketing-site-root [data-evd="title"] > :first-child > :nth-child(2) { grid-column: 1; grid-row: 2; }
+  #marketing-site-root [data-evd="title"] > :first-child > :nth-child(n+3) { grid-column: 1 / -1; grid-row: 3; }
+  #marketing-site-root [data-evd="title"] > :last-child[style] { grid-column: 2; grid-row: 1 / span 2; flex: none !important; max-width: 128px !important; flex-direction: column !important; align-items: flex-end !important; justify-content: flex-start !important; gap: 6px !important; padding-top: 2px !important; }
+  #marketing-site-root [data-evd="title"] > :last-child > span[style] { font-size: 10px !important; letter-spacing: 0.1em !important; padding: 6px 10px !important; white-space: normal !important; text-align: center !important; line-height: 1.2 !important; }
+}
