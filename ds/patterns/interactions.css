@@ -1,0 +1,66 @@
+/* ============================================================
+   AKIMBO CREATIVE HAUS — INTERACTION PATTERNS
+   Locked web-pattern states that inline styles can't express
+   (:hover / :active / :focus). Ships with the token closure.
+   ============================================================ */
+
+/* ---- Links: always define so added links never render browser-blue ---- */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+
+/* ---- Buttons — pill; DARKEN on hover, never lighten ---- */
+.ak-btn--primary:hover {
+  background: var(--press-darken);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-block-hover);
+}
+.ak-btn--primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-block-press);
+}
+.ak-btn--primary:focus-visible {
+  outline: 2px solid var(--akimbo-red);
+  outline-offset: 2px;
+}
+
+.ak-btn--charcoal:hover {
+  background: #000;
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-block-hover);
+}
+.ak-btn--charcoal:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-block-press);
+}
+.ak-btn--charcoal:focus-visible {
+  outline: 2px solid var(--charcoal);
+  outline-offset: 2px;
+}
+
+.ak-btn--onDark:hover {
+  background: var(--akimbo-cream);
+  color: var(--akimbo-black);
+  border-color: var(--akimbo-cream);
+}
+.ak-btn--onDark:active { transform: translate(1px, 1px); }
+.ak-btn--onDark:focus-visible {
+  outline: 2px solid var(--akimbo-cream);
+  outline-offset: 2px;
+}
+
+.ak-btn--link { border-bottom: 2px solid transparent; }
+.ak-btn--link:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+
+/* ---- Default card: gentle lift ---- */
+.ak-card { transition: transform .18s ease, box-shadow .18s ease; }
+.ak-card--hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-pop);
+}
+
+/* ---- Work tile (web): dark tile, hard red block shadow on hover ---- */
+.ak-work-tile { transition: transform .18s ease, box-shadow .18s ease; }
+.ak-work-tile:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 rgba(183, 65, 50, 0.9);
+}

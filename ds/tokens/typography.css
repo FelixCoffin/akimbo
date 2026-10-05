@@ -1,0 +1,61 @@
+/* ============================================================
+   AKIMBO CREATIVE HAUS — TYPOGRAPHY TOKENS
+   Two families only:
+     • Regards — statement moments / the wordmark voice (single weight 400)
+     • Futura  — everything else. Condensed ExtraBold (800) for big headlines &
+                 stat figures; Jost stands in for Futura text weights (Medium 500 /
+                 Bold 700 / Medium Italic).
+   Regards is 400 only — never faux-bold. Style it with size, not weight.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display:   "Regards", Georgia, serif;                              /* statement moments / wordmark voice */
+  --font-headline:  "Futura Condensed ExtraBold", "Jost", sans-serif;       /* big headlines, H1/H2, stat figures */
+  --font-condensed: var(--font-headline);                                   /* alias */
+  --font-body:      "Futura", "Jost", "Century Gothic", system-ui, sans-serif; /* body copy (real Futura BT Light; Jost covers heavier weights) */
+  --font-label:     var(--font-body);                                       /* pair with --fw-bold + tracked caps */
+
+  /* ---- Weights ----
+     Regards is single-weight (400) — do not bold. The ramp applies to Futura/Jost. */
+  --fw-light:    300; /* @kind font */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+  --fw-black:    800; /* @kind font */
+  --fw-display:  400; /* @kind font */
+  --fw-headline: 800; /* @kind font */
+
+  /* ============================================================
+     TYPE SCALE (px; screen ≈ pt)
+     ============================================================ */
+  --type-display: 56px; /* hero / display headlines, set huge & tight */
+  --type-h1:      34px; /* document titles */
+  --type-h2:      22px; /* section sub-heads */
+  --type-section: 13px; /* uppercase tracked section labels / kickers */
+  --type-body-lg: 17px; /* lead / intro paragraph */
+  --type-body:    15px; /* long copy */
+  --type-small:   12px; /* small print, notes, footer */
+  --type-stat:    48px; /* headline stat figures ($ amounts) */
+
+  /* ---- Line heights ---- */
+  --lh-tight:   1.04; /* @kind font */
+  --lh-snug:    1.18; /* @kind font */
+  --lh-body:    1.55; /* @kind font */
+  --lh-relaxed: 1.66; /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-display:    -0.01em; /* @kind font */
+  --ls-label:      0.14em;  /* @kind font */
+  --ls-label-wide: 0.20em;  /* @kind font */
+  --ls-body:       0;       /* @kind font */
+
+  /* ============================================================
+     SEMANTIC ROLES
+     ============================================================ */
+  --role-display-family: var(--font-display);   /* Regards — statement moments */
+  --role-headline-family: var(--font-headline); /* Futura Condensed ExtraBold — UPPER */
+  --role-label-family:   var(--font-condensed); /* tracked caps labels */
+  --role-body-family:    var(--font-body);      /* Futura / Jost */
+}
