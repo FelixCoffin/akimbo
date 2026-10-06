@@ -305,7 +305,7 @@ function Button({
       }
     }, rest), children, arrow && /*#__PURE__*/React.createElement("span", {
       "aria-hidden": "true"
-    }, "\u2192\uFE0E"));
+    }, "\u2192"));
   }
   const base = {
     ...label,
@@ -349,7 +349,7 @@ function Button({
     }
   }, rest), children, arrow && /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true"
-  }, "\u2197\uFE0E"));
+  }, "\u2197"));
 }
 Object.assign(__ds_scope, { Button });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/buttons/Button.jsx", error: String((e && e.message) || e) }); }
