@@ -29,9 +29,9 @@ window.AKIMBO_EVENTS = [
   {
     id: "hamptons-activation", meta: "HEAVENSAKE", title: "Hamptons Activation",
     pageTitle: ["Heavensake x The Surf Lodge", "x PARI PARI Miami"],
-    body: "HEAVENSAKE put on a sushi dinner at Surf Lodge in Montauk with Pari Pari, with chefs in from Japan. The dinners are invite only. HEAVENSAKE wanted a film for social that looks as elevated as the evening itself and makes people want to be at the next one.",
-    goal: "HEAVENSAKE put on a sushi dinner at Surf Lodge in Montauk with Pari Pari, with chefs in from Japan. The dinners are invite only. HEAVENSAKE wanted a film for social that looks as elevated as the evening itself and makes people want to be at the next one.",
-    approach: "One film, shot by candlelight. The chefs and the making of the food, the guests, the room, and what the evening was like to be at.",
+    body: "Iconic Sake brand HEAVENSAKE called on us to capture their unforgettable collaboration and private Omakase experience. In collaboration with Montauk’s legendary The Surf Lodge, our friends at HEAVENSAKE hired Akimbo to ensure this one-night event would be documented in a way that allowed it to live forever.",
+    goal: "In a “fly-on-the-wall” style, capture a recap film of the entire night from start to finish; from Lupe Fiasco’s performance moments, to the setting of the tables and Omakase prep, all the way through the final course.  All while highlighting HEAVENSAKE as an irreplaceable member of the night.\n\nWe also were tasked with capturing the seaplane ride back into New York City, which was handled by HEAVENSAKE for each of their guests.",
+    approach: "For a candlelight dinner on the beach, we came equipped with gear designed to perform in low light, and without a large crew.  Professional drone capture highlighted the unique location of The Surf Lodge, and how it added to the ambience and exclusivity of the event.\n\nOur team stayed overnight to ensure we could capture the seaplane ride home the next morning, which was crucial to capturing the whole feeling of the event.",
     list: ["Recap edit"],
     poster: "assets/heavensake-4.jpg", posterPosition: "50% 56%", hoverVideo: "assets/heavensake-hover.mp4",
     phones: ["assets/heavensake-film.mp4", "assets/heavensake-vert-1.mp4"],
