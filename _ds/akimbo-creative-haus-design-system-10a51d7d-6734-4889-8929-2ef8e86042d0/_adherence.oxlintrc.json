@@ -1,0 +1,518 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/buttons/**",
+              "components/cards/**",
+              "components/deck/**",
+              "components/doc/**",
+              "components/layout/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Futura|Regards|Futura Condensed ExtraBold|Jost))/i]",
+        "message": "Font not provided by the design system. Available: Futura, Regards, Futura Condensed ExtraBold, Jost."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoMark'] > JSXAttribute > JSXIdentifier[name!=/^(?:pose|tone|size|basePath|alt|key|ref|className|style|children)$/]",
+        "message": "<BoMark> doesn't accept that prop. Declared props: pose, tone, size, basePath, alt."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoMark'] > JSXAttribute[name.name='pose'] > Literal[value!=/^(?:leaping|walking|together|dual|flag|point|stand|relax|super|sitting|pointRight|cherries)$/]",
+        "message": "<BoMark> pose must be one of 'leaping' | 'walking' | 'together' | 'dual' | 'flag' | 'point' | 'stand' | 'relax' | 'super' | 'sitting' | 'pointRight' | 'cherries'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoMark'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|black|cream)$/]",
+        "message": "<BoMark> tone must be one of 'red' | 'black' | 'cream'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Box'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|callout|bodyStyle|children|key|ref|className|style|children)$/]",
+        "message": "<Box> doesn't accept that prop. Declared props: title, callout, bodyStyle, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BulletList'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|tone|key|ref|className|style|children)$/]",
+        "message": "<BulletList> doesn't accept that prop. Declared props: items, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BulletList'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|green|black)$/]",
+        "message": "<BulletList> tone must be one of 'red' | 'green' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|href|as|arrow|disabled|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, href, as, arrow, disabled, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|charcoal|onDark|link)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'charcoal' | 'onDark' | 'link'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:hover|href|as|children|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: hover, href, as, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:heading|body|slotId|placeholder|tone|key|ref|className|style|children)$/]",
+        "message": "<ContentCard> doesn't accept that prop. Declared props: heading, body, slotId, placeholder, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentCard'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|cream)$/]",
+        "message": "<ContentCard> tone must be one of 'red' | 'cream'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckContent'] > JSXAttribute > JSXIdentifier[name!=/^(?:kicker|label|title|titleFont|titleSize|subtitle|project|page|year|theme|accent|tab|mark|bo|boPose|boBasePath|logoBasePath|children|key|ref|className|style|children)$/]",
+        "message": "<DeckContent> doesn't accept that prop. Declared props: kicker, label, title, titleFont, titleSize, subtitle, project, page, year, theme, accent, tab, mark, bo, boPose, boBasePath, logoBasePath, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckContent'] > JSXAttribute[name.name='titleFont'] > Literal[value!=/^(?:condensed|display)$/]",
+        "message": "<DeckContent> titleFont must be one of 'condensed' | 'display'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckContent'] > JSXAttribute[name.name='theme'] > Literal[value!=/^(?:light|dark|red)$/]",
+        "message": "<DeckContent> theme must be one of 'light' | 'dark' | 'red'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckContent'] > JSXAttribute[name.name='boPose'] > Literal[value!=/^(?:leaping|walking|together|cherries|dual)$/]",
+        "message": "<DeckContent> boPose must be one of 'leaping' | 'walking' | 'together' | 'cherries' | 'dual'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckCover'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|subtitle|client|meta|theme|accent|logoBasePath|key|ref|className|style|children)$/]",
+        "message": "<DeckCover> doesn't accept that prop. Declared props: title, subtitle, client, meta, theme, accent, logoBasePath."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckCover'] > JSXAttribute[name.name='theme'] > Literal[value!=/^(?:light|dark)$/]",
+        "message": "<DeckCover> theme must be one of 'light' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckDivider'] > JSXAttribute > JSXIdentifier[name!=/^(?:kicker|title|subtitle|page|theme|accent|bo|boPose|boTone|boBasePath|key|ref|className|style|children)$/]",
+        "message": "<DeckDivider> doesn't accept that prop. Declared props: kicker, title, subtitle, page, theme, accent, bo, boPose, boTone, boBasePath."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckDivider'] > JSXAttribute[name.name='theme'] > Literal[value!=/^(?:dark|red)$/]",
+        "message": "<DeckDivider> theme must be one of 'dark' | 'red'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckDivider'] > JSXAttribute[name.name='boPose'] > Literal[value!=/^(?:leaping|walking|together|cherries|dual)$/]",
+        "message": "<DeckDivider> boPose must be one of 'leaping' | 'walking' | 'together' | 'cherries' | 'dual'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckDivider'] > JSXAttribute[name.name='boTone'] > Literal[value!=/^(?:cream|red|green|black)$/]",
+        "message": "<DeckDivider> boTone must be one of 'cream' | 'red' | 'green' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckSlide'] > JSXAttribute > JSXIdentifier[name!=/^(?:theme|accent|paper|ink|padding|children|key|ref|className|style|children)$/]",
+        "message": "<DeckSlide> doesn't accept that prop. Declared props: theme, accent, paper, ink, padding, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DeckSlide'] > JSXAttribute[name.name='theme'] > Literal[value!=/^(?:light|dark|red)$/]",
+        "message": "<DeckSlide> theme must be one of 'light' | 'dark' | 'red'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DocFooter'] > JSXAttribute > JSXIdentifier[name!=/^(?:left|docType|right|key|ref|className|style|children)$/]",
+        "message": "<DocFooter> doesn't accept that prop. Declared props: left, docType, right."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DocHeaderMeta'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|key|ref|className|style|children)$/]",
+        "message": "<DocHeaderMeta> doesn't accept that prop. Declared props: label, value."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DocTitle'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|title|subtitle|lead|key|ref|className|style|children)$/]",
+        "message": "<DocTitle> doesn't accept that prop. Declared props: label, title, subtitle, lead."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LabelValueRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|key|ref|className|style|children)$/]",
+        "message": "<LabelValueRow> doesn't accept that prop. Declared props: label, value."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute > JSXIdentifier[name!=/^(?:lockup|tone|height|basePath|alt|key|ref|className|style|children)$/]",
+        "message": "<Logo> doesn't accept that prop. Declared props: lockup, tone, height, basePath, alt."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute[name.name='lockup'] > Literal[value!=/^(?:wordmark|centered|offset)$/]",
+        "message": "<Logo> lockup must be one of 'wordmark' | 'centered' | 'offset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logo'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|green|black|cream)$/]",
+        "message": "<Logo> tone must be one of 'red' | 'green' | 'black' | 'cream'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='OvalKicker'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|size|tilt|key|ref|className|style|children)$/]",
+        "message": "<OvalKicker> doesn't accept that prop. Declared props: children, tone, size, tilt."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='OvalKicker'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|cream|black|green)$/]",
+        "message": "<OvalKicker> tone must be one of 'red' | 'cream' | 'black' | 'green'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PageTab'] > JSXAttribute > JSXIdentifier[name!=/^(?:number|tone|size|key|ref|className|style|children)$/]",
+        "message": "<PageTab> doesn't accept that prop. Declared props: number, tone, size."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PageTab'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|cream)$/]",
+        "message": "<PageTab> tone must be one of 'red' | 'cream'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionLabel'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|wide|as|children|key|ref|className|style|children)$/]",
+        "message": "<SectionLabel> doesn't accept that prop. Declared props: tone, wide, as, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionLabel'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|green|muted|warm|onDark)$/]",
+        "message": "<SectionLabel> tone must be one of 'red' | 'green' | 'muted' | 'warm' | 'onDark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|caption|variant|align|key|ref|className|style|children)$/]",
+        "message": "<StatBlock> doesn't accept that prop. Declared props: value, label, caption, variant, align."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:muted|red)$/]",
+        "message": "<StatBlock> variant must be one of 'muted' | 'red'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center|right)$/]",
+        "message": "<StatBlock> align must be one of 'left' | 'center' | 'right'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|tone|align|key|ref|className|style|children)$/]",
+        "message": "<StatCard> doesn't accept that prop. Declared props: value, label, tone, align."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|cream)$/]",
+        "message": "<StatCard> tone must be one of 'red' | 'cream'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center)$/]",
+        "message": "<StatCard> align must be one of 'left' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|channel|children|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: tone, channel, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:red|green|solidGreen|solidRed)$/]",
+        "message": "<Tag> tone must be one of 'red' | 'green' | 'solidGreen' | 'solidRed'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "BoMark": {
+        "replaces": []
+      },
+      "Box": {
+        "replaces": []
+      },
+      "BulletList": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "ContentCard": {
+        "replaces": []
+      },
+      "DeckContent": {
+        "replaces": []
+      },
+      "DeckCover": {
+        "replaces": []
+      },
+      "DeckDivider": {
+        "replaces": []
+      },
+      "DeckSlide": {
+        "replaces": []
+      },
+      "DocFooter": {
+        "replaces": []
+      },
+      "DocHeaderMeta": {
+        "replaces": []
+      },
+      "DocTitle": {
+        "replaces": []
+      },
+      "LabelValueRow": {
+        "replaces": []
+      },
+      "Logo": {
+        "replaces": []
+      },
+      "OvalKicker": {
+        "replaces": []
+      },
+      "PageTab": {
+        "replaces": []
+      },
+      "SectionLabel": {
+        "replaces": []
+      },
+      "StatBlock": {
+        "replaces": []
+      },
+      "StatCard": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--akimbo-black",
+      "--akimbo-cream",
+      "--akimbo-green",
+      "--akimbo-red",
+      "--akimbo-white",
+      "--border-card",
+      "--border-card-width",
+      "--btn-charcoal",
+      "--btn-charcoal-text",
+      "--btn-on-dark-border",
+      "--btn-primary-bg",
+      "--btn-primary-text",
+      "--btn-red",
+      "--callout-border",
+      "--charcoal",
+      "--cream-deep",
+      "--divider",
+      "--doc-gap",
+      "--doc-margin",
+      "--doc-maxwidth",
+      "--font-body",
+      "--font-condensed",
+      "--font-display",
+      "--font-headline",
+      "--font-label",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-display",
+      "--fw-headline",
+      "--fw-light",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--green-deep",
+      "--green-tint",
+      "--hairline",
+      "--hairline-grey",
+      "--lh-body",
+      "--lh-relaxed",
+      "--lh-snug",
+      "--lh-tight",
+      "--link",
+      "--link-hover",
+      "--ls-body",
+      "--ls-display",
+      "--ls-label",
+      "--ls-label-wide",
+      "--muted-grey",
+      "--paper-shade",
+      "--press-darken",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--red-deep",
+      "--red-tint",
+      "--role-body-family",
+      "--role-display-family",
+      "--role-headline-family",
+      "--role-label-family",
+      "--rule-accent",
+      "--rule-hairline",
+      "--rule-weight",
+      "--shadow-block",
+      "--shadow-block-hover",
+      "--shadow-block-press",
+      "--shadow-card",
+      "--shadow-none",
+      "--shadow-pop",
+      "--space-0",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-2",
+      "--space-20",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--surface-callout",
+      "--surface-card",
+      "--surface-dark",
+      "--surface-dark-alt",
+      "--surface-forest",
+      "--surface-panel",
+      "--surface-paper",
+      "--surface-statement",
+      "--text-accent",
+      "--text-body",
+      "--text-label",
+      "--text-muted",
+      "--text-on-dark",
+      "--text-on-dark-dim",
+      "--type-body",
+      "--type-body-lg",
+      "--type-display",
+      "--type-h1",
+      "--type-h2",
+      "--type-section",
+      "--type-small",
+      "--type-stat",
+      "--warm-grey"
+    ],
+    "tokenKinds": {
+      "--akimbo-red": "color",
+      "--akimbo-cream": "color",
+      "--akimbo-black": "color",
+      "--akimbo-white": "color",
+      "--akimbo-green": "color",
+      "--charcoal": "color",
+      "--warm-grey": "color",
+      "--muted-grey": "color",
+      "--red-tint": "color",
+      "--red-deep": "color",
+      "--green-tint": "color",
+      "--green-deep": "color",
+      "--hairline": "color",
+      "--hairline-grey": "color",
+      "--paper-shade": "color",
+      "--cream-deep": "color",
+      "--text-body": "font",
+      "--text-label": "font",
+      "--text-muted": "font",
+      "--text-accent": "font",
+      "--text-on-dark": "font",
+      "--text-on-dark-dim": "font",
+      "--surface-paper": "color",
+      "--surface-panel": "color",
+      "--surface-card": "color",
+      "--surface-callout": "color",
+      "--surface-dark": "color",
+      "--surface-forest": "color",
+      "--surface-statement": "color",
+      "--surface-dark-alt": "color",
+      "--rule-accent": "color",
+      "--border-card": "color",
+      "--divider": "color",
+      "--link": "color",
+      "--link-hover": "color",
+      "--press-darken": "color",
+      "--btn-red": "color",
+      "--btn-charcoal": "color",
+      "--btn-primary-bg": "color",
+      "--btn-primary-text": "font",
+      "--btn-charcoal-text": "font",
+      "--btn-on-dark-border": "color",
+      "--font-display": "font",
+      "--font-headline": "font",
+      "--font-condensed": "font",
+      "--font-body": "font",
+      "--font-label": "font",
+      "--fw-light": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-black": "font",
+      "--fw-display": "font",
+      "--fw-headline": "font",
+      "--type-display": "font",
+      "--type-h1": "font",
+      "--type-h2": "font",
+      "--type-section": "font",
+      "--type-body-lg": "font",
+      "--type-body": "font",
+      "--type-small": "font",
+      "--type-stat": "font",
+      "--lh-tight": "font",
+      "--lh-snug": "font",
+      "--lh-body": "font",
+      "--lh-relaxed": "font",
+      "--ls-display": "font",
+      "--ls-label": "font",
+      "--ls-label-wide": "font",
+      "--ls-body": "font",
+      "--role-display-family": "color",
+      "--role-headline-family": "color",
+      "--role-label-family": "color",
+      "--role-body-family": "color",
+      "--space-0": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--space-16": "spacing",
+      "--space-20": "spacing",
+      "--doc-margin": "spacing",
+      "--doc-gap": "spacing",
+      "--doc-maxwidth": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius",
+      "--rule-weight": "font",
+      "--callout-border": "spacing",
+      "--rule-hairline": "spacing",
+      "--border-card-width": "spacing",
+      "--shadow-card": "shadow",
+      "--shadow-pop": "shadow",
+      "--shadow-none": "shadow",
+      "--shadow-block": "shadow",
+      "--shadow-block-hover": "shadow",
+      "--shadow-block-press": "shadow"
+    },
+    "fontFamilies": [
+      "Futura",
+      "Futura Condensed ExtraBold",
+      "Jost",
+      "Regards"
+    ]
+  }
+}

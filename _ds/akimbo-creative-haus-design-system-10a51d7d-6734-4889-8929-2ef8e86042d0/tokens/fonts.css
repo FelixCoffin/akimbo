@@ -1,0 +1,75 @@
+/* ============================================================
+   AKIMBO CREATIVE HAUS — WEBFONTS
+   Two families only:
+     1. Regards  — statement moments / the wordmark voice (REAL, single weight 400)
+     2. Futura   — everything else. Futura Condensed ExtraBold (REAL, 800) for big
+                   headlines; Futura BT Light + Futura Medium (both REAL) for body copy.
+                   Jost remains only as a last-resort fallback.
+   Regards ships a SINGLE weight (400). Never faux-bold it — style with size, not weight.
+   RETIRED — never load: Apnea Inline Fill, Poppins.
+   ============================================================ */
+
+/* Jost — last-resort fallback for any Futura weight not covered */
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap");
+
+/* Futura — REAL, two cuts: BT Light for ≤400, Medium for ≥500 (body default is 500) */
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/fonts/FuturaBT-Light.ttf") format("truetype");
+  font-weight: 100 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/fonts/Futura-Medium.otf") format("opentype");
+  font-weight: 500 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Regards — statement / wordmark face (REAL) */
+@font-face {
+  font-family: "Regards";
+  src: url("../assets/fonts/Regards-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Regards — MANDATORY lowercase "a" swap. Regards' default "a" is the fancy
+   two-story glyph; the brand "a" is the single-story form that mirrors the
+   akimbo wordmark. This override supplies ONLY U+0061 (a) from a one-glyph
+   font, so every "a" set in Regards is the correct one — no exceptions, and
+   no other glyph, ligature, or kern is affected. Declared AFTER the base so
+   it wins for "a". Never remove. */
+@font-face {
+  font-family: "Regards";
+  src: url("../assets/fonts/Regards-alt-a.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0061;
+}
+
+/* Regards — MANDATORY lowercase "e" swap. Same rule as the "a": Regards' default
+   "e" is an angled form; the brand "e" is the upright single-story glyph. This
+   supplies ONLY U+0065 (e) from a one-glyph font, so every "e" set in Regards is
+   the correct one. Declared after the base so it wins for "e". Never remove. */
+@font-face {
+  font-family: "Regards";
+  src: url("../assets/fonts/Regards-alt-e.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0065;
+}
+
+/* Futura Std Condensed ExtraBold — big headlines & stat figures (REAL) */
+@font-face {
+  font-family: "Futura Condensed ExtraBold";
+  src: url("../assets/fonts/FuturaStd-CondensedExtraBd.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

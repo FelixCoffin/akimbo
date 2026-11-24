@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* On the live site every page has its own URL (/work/…), so resolve relative files from the site root. */if(!/\/serve\//.test(location.pathname)&&location.protocol!=="file:"){document.write('<base href="/">');}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>T-Mobile: Club Magenta at Watershed | Akimbo Creative Haus</title>
+<meta name="description" content="When T-Mobile brought Club Magenta to the Watershed Festival at the Gorge Amphitheatre, we teamed up with Life n Light to capture the high-voltage...">
+<meta name="theme-color" content="#0F0E0D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akimbo Creative Haus">
+<meta property="og:title" content="T-Mobile: Club Magenta at Watershed | Akimbo Creative Haus">
+<meta property="og:description" content="When T-Mobile brought Club Magenta to the Watershed Festival at the Gorge Amphitheatre, we teamed up with Life n Light to capture the high-voltage...">
+<meta property="og:image" content="https://akimbo.haus/assets/v2-thumbs/tmobile.jpg">
+<meta property="og:url" content="https://akimbo.haus/work/tmobile">
+<link rel="canonical" href="https://akimbo.haus/work/tmobile">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Akimbo Creative Haus","description":"Creative, production, and post studio in Seattle and New York.","email":"hello@akimbo.haus","sameAs":["https://www.instagram.com/akimbo.haus","https://www.linkedin.com/company/akimbo-creative-haus/","https://www.youtube.com/@akimbo.haus"],"address":[{"@type":"PostalAddress","streetAddress":"5651 University Wy NE","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"},{"@type":"PostalAddress","streetAddress":"300 Kent Ave","addressLocality":"Brooklyn","addressRegion":"NY","addressCountry":"US"}]}</script>
+<script src="./ds-base.js"></script>
+<script crossorigin="anonymous" src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="./work-data.js"></script>
+<script src="./events-data.js"></script>
+<script src="./image-slot.js"></script>
+<script type="text/babel" src="./v2/Shared.jsx"></script>
+<script src="./v2/projects-data.js?v=mwtnwldj"></script>
+<script type="text/babel" src="./v2/Work.jsx"></script>
+<script type="text/babel" src="./v2/Project.jsx?v=mwpr2f76"></script>
+<script type="text/babel" src="./v2/Home.jsx"></script>
+<script type="text/babel" src="./v2/About.jsx"></script>
+<script type="text/babel" src="./v2/Contact.jsx"></script>
+<script type="text/babel" src="./v2/WorkDetail.jsx"></script>
+<script type="text/babel" src="./v2/EventDetail.jsx"></script>
+<script src="./v2/app.js"></script>
+<style>
+/* V2: Caslon is always set italic, so the upright slots load the italic cuts too. */
+@font-face { font-family: "Adobe Caslon Pro"; src: url("assets/fonts-v2/ACaslonPro-Italic.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adobe Caslon Pro"; src: url("assets/fonts-v2/ACaslonPro-Italic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adobe Caslon Pro"; src: url("assets/fonts-v2/ACaslonPro-SemiboldItalic.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adobe Caslon Pro"; src: url("assets/fonts-v2/ACaslonPro-SemiboldItalic.otf") format("opentype"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Adobe Caslon Pro"; src: url("assets/fonts-v2/ACaslonPro-BoldItalic.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adobe Caslon Pro"; src: url("assets/fonts-v2/ACaslonPro-BoldItalic.otf") format("opentype"); font-weight: 700; font-style: italic; font-display: swap; }
+/* Upright Caslon, kept separate so it only appears where a statement mixes roman with italic. */
+@font-face { font-family: "Adobe Caslon Pro Roman"; src: url("assets/fonts-v2/ACaslonPro-Semibold.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Adobe Caslon Pro Roman"; src: url("assets/fonts-v2/ACaslonPro-SemiboldItalic.otf") format("opentype"); font-weight: 600; font-style: italic; font-display: swap; }
+/* V2 serif: EB Garamond. "V2 Garamond" always renders italic; "V2 Garamond Roman" keeps upright for mixed statements. */
+@font-face { font-family: "V2 Garamond"; src: url("assets/fonts-v2/EBGaramond-600Italic.woff2") format("woff2"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "V2 Garamond"; src: url("assets/fonts-v2/EBGaramond-600Italic.woff2") format("woff2"); font-weight: 400 800; font-style: italic; font-display: swap; }
+@font-face { font-family: "V2 Garamond Roman"; src: url("assets/fonts-v2/EBGaramond-600.woff2") format("woff2"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "V2 Garamond Roman"; src: url("assets/fonts-v2/EBGaramond-600Italic.woff2") format("woff2"); font-weight: 400 800; font-style: italic; font-display: swap; }
+/* V2 serif: Instrument Serif (visual match for the Ghost Note reference). "V2 Serif" always renders italic; "V2 Serif Roman" keeps upright for mixed statements. Weight range stops the browser faking bold. */
+@font-face { font-family: "V2 Serif"; src: url("assets/fonts-v2/InstrumentSerif-Italic.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "V2 Serif"; src: url("assets/fonts-v2/InstrumentSerif-Italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "V2 Serif Roman"; src: url("assets/fonts-v2/InstrumentSerif-Regular.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "V2 Serif Roman"; src: url("assets/fonts-v2/InstrumentSerif-Italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+html, body { margin: 0; background: #0F0E0D; }
+#v2-root {
+  --v2-serif: "V2 Serif", "Instrument Serif", Georgia, serif;
+  --v2-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --v2-fg: #F4F2EC; --v2-dim: rgba(244,242,236,0.55); --v2-dim-strong: rgba(244,242,236,0.78); --v2-line: rgba(244,242,236,0.14); --v2-red: #B74132;
+  --text-body: #F4F2EC; --text-label: rgba(244,242,236,0.72); --akimbo-cream: #F4F2EC; --surface-paper: #0F0E0D;
+  --font-body: var(--v2-sans); --font-headline: var(--v2-serif); --font-condensed: var(--v2-sans); --font-display: var(--v2-serif);
+  background: #0F0E0D; color: #F4F2EC; font-family: var(--v2-sans); min-height: 100vh; overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+#v2-root a { color: inherit; text-decoration: none; }
+#v2-root a:hover { color: #F4F2EC; }
+#v2-root .v2-nav-link { font-family: var(--v2-serif); font-weight: 600; font-size: 22px; color: #F4F2EC; padding-bottom: 3px; border-bottom: 2px solid transparent; white-space: nowrap; transition: border-bottom-color .3s ease; }
+#v2-root .v2-nav-link:hover { border-bottom-color: #F4F2EC; }
+#v2-root .v2-nav-link.v2-nav-on { border-bottom-color: var(--v2-red); }
+#v2-root .v2-logo span { transition: transform .25s ease; transform-origin: left center; }
+#v2-root .v2-logo:hover span { transform: scale(1.04); }
+#v2-root .v2-link { transition: opacity .2s ease; }
+#v2-root .v2-film-cue { transition: background-color .2s ease, border-color .2s ease; }
+#v2-root .v2-film-card:hover .v2-film-cue { background: var(--v2-red) !important; border-color: var(--v2-red) !important; }
+#v2-root .v2-link:hover { opacity: 0.6; }
+#v2-root .v2-pill { display: inline-flex; align-items: center; height: 46px; padding: 0 24px; border: 1px solid rgba(244,242,236,0.9); border-radius: 999px; font-family: var(--v2-sans); font-weight: 500; font-size: 12px; letter-spacing: -0.05em; text-transform: uppercase; color: #F4F2EC; background: transparent; cursor: pointer; transition: background .2s ease, color .2s ease; }
+#v2-root .v2-pill:hover, #v2-root .v2-pill-on { background: #F4F2EC; color: #0F0E0D !important; }
+#v2-root .v2-copy:hover span:first-child { opacity: 0.7; }
+/* Project intro: text and the tags/partner column only sit side by side when there's room for both; otherwise they stack. */
+@media (max-width: 1100px) {
+  #v2-root [data-v2="pintro"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+  #v2-root [data-v2="pintro"] > div:first-child { max-width: 720px !important; }
+  #v2-root [data-v2="pside"] { flex-direction: row !important; flex-wrap: wrap !important; align-items: flex-start !important; justify-content: space-between !important; gap: 24px 48px !important; }
+  #v2-root [data-v2="ptags"] { justify-content: flex-start !important; }
+  #v2-root [data-v2="pcredit"] { align-items: flex-start !important; text-align: left !important; }
+}
+#v2-root .v2-email-drop { position: absolute; left: 0; top: 100%; padding-top: 8px; z-index: 3; opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .25s ease, transform .3s cubic-bezier(.2,.8,.2,1); }
+#v2-root .v2-email:hover .v2-email-drop, #v2-root .v2-email:focus-within .v2-email-drop, #v2-root .v2-email-done .v2-email-drop { opacity: 1; transform: none; pointer-events: auto; }
+#v2-root .v2-email-btn { display: inline-flex; align-items: center; height: 28px; padding: 0 14px; border: 1px solid rgba(244,242,236,0.55); border-radius: 999px; background: var(--v2-bg, #0F0E0D); color: var(--v2-fg); font-family: var(--v2-sans); font-weight: 700; font-size: 11px; letter-spacing: -0.03em; text-transform: uppercase; white-space: nowrap; cursor: pointer; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+#v2-root .v2-email-btn:hover { background: #F4F2EC; color: #0F0E0D; border-color: #F4F2EC; }
+#v2-root .v2-email-done .v2-email-btn { background: var(--v2-red); border-color: var(--v2-red); color: #F4F2EC; }
+@media (hover: none) { #v2-root .v2-email-drop { position: static; opacity: 1; transform: none; pointer-events: auto; } }
+@media (hover: hover) { #v2-root [data-v2="connect"] .v2-email { margin-bottom: 20px; } }
+#v2-root .v2-copy-hint { opacity: 0; transition: opacity .2s ease; }
+#v2-root .v2-copy:hover .v2-copy-hint, #v2-root .v2-copy:focus-visible .v2-copy-hint { opacity: 1; }
+/* Button hover echo: two outline copies drop down from the pill. */
+/* The echoes sit at z-index -1 inside #v2-root's own stacking context, so they paint above the page but under the pill's red fill. */
+#v2-root { isolation: isolate; }
+#v2-root .v2-pill { position: relative; white-space: nowrap; flex-shrink: 0; }
+#v2-root .v2-pill::before, #v2-root .v2-pill::after { content: ""; position: absolute; inset: -1px; z-index: -1; border: 1px solid #F4F2EC; border-radius: inherit; opacity: 0; pointer-events: none; transform: translateY(0); transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .25s ease; }
+#v2-root .v2-pill:not(.v2-pill-on):hover::before { opacity: 0.7; transform: translateY(8px); }
+#v2-root .v2-pill:not(.v2-pill-on):hover::after { opacity: 0.35; transform: translateY(16px); transition-delay: .05s; }
+@media (prefers-reduced-motion: reduce) { #v2-root .v2-pill::before, #v2-root .v2-pill::after { display: none; } }
+/* Button hover: red fill, off-white text (overrides the default off-white fill). Selected filters keep their off-white fill. */
+#v2-root .v2-pill:not(.v2-pill-on):hover, #v2-root .v2-filter:not(.v2-pill-on):hover { background: var(--v2-red); border-color: var(--v2-red); color: #F4F2EC !important; }
+/* Book a call: the one solid red CTA. Bigger than the standard pill; darkens on hover. */
+#v2-root .v2-bo-btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; width: 150px; height: 76px; padding: 8px 0 0; box-sizing: border-box; font-family: var(--v2-sans); font-weight: 500; font-size: 13px; letter-spacing: -0.05em; text-transform: uppercase; color: #F4F2EC !important; text-decoration: none; white-space: nowrap; cursor: pointer; }
+#v2-root .v2-bo-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--v2-red); -webkit-mask: url("assets/illustrations/bo-head-solid-red.png") center / 100% 100% no-repeat; mask: url("assets/illustrations/bo-head-solid-red.png") center / 100% 100% no-repeat; transition: background-color .2s ease; pointer-events: none; }
+#v2-root .v2-bo-btn:hover::before { background: #98352A; }
+@keyframes v2-bo-wiggle { 0%, 100% { transform: translateX(0) rotate(0deg); } 25% { transform: translateX(-3px) rotate(-2deg); } 75% { transform: translateX(3px) rotate(2deg); } }
+#v2-root .v2-bo-btn:hover { animation: v2-bo-wiggle .6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { #v2-root .v2-bo-btn:hover { animation: none; } }
+#v2-root .v2-bo-copy { position: absolute; inset: 0; z-index: -2; background: #F4F2EC; opacity: 0; pointer-events: none; transform: translateY(0); transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .25s ease;
+  -webkit-mask: url("assets/illustrations/bo-head-solid-red.png") center / 100% 100% no-repeat, url("assets/illustrations/bo-head-solid-red.png") center / calc(100% - 3px) calc(100% - 3px) no-repeat; -webkit-mask-composite: xor;
+  mask: url("assets/illustrations/bo-head-solid-red.png") center / 100% 100% no-repeat exclude, url("assets/illustrations/bo-head-solid-red.png") center / calc(100% - 3px) calc(100% - 3px) no-repeat; }
+#v2-root .v2-bo-btn:hover .v2-bo-copy:nth-of-type(1) { opacity: 0.7; transform: translateY(8px); }
+#v2-root .v2-bo-btn:hover .v2-bo-copy:nth-of-type(2) { opacity: 0.35; transform: translateY(16px); transition-delay: .05s; }
+@media (prefers-reduced-motion: reduce) { #v2-root .v2-bo-copy { display: none; } }
+#v2-root .v2-pill-cta { height: 58px; padding: 0 34px; font-size: 18px; background: var(--v2-red); border-color: var(--v2-red); color: #F4F2EC !important; }
+#v2-root .v2-pill-cta:not(.v2-pill-on):hover { background: #98352A; border-color: #98352A; }
+#v2-root .v2-social svg { width: 100%; height: 100%; }
+#v2-root .v2-filter { height: 42px; padding: 0 20px; font-size: 13px; border-color: rgba(244,242,236,0.35); color: rgba(244,242,236,0.75); }
+#v2-root .v2-filter:hover { border-color: #F4F2EC; background: transparent; color: #F4F2EC !important; }
+#v2-root .v2-filter.v2-pill-on, #v2-root .v2-filter.v2-pill-on:hover { background: #F4F2EC; border-color: #F4F2EC; color: #0F0E0D !important; }
+#v2-root .v2-field { background: transparent; border: 0; border-bottom: 1px solid rgba(244,242,236,0.35); color: #F4F2EC; font: 400 18px/1.4 var(--v2-sans); letter-spacing: -0.05em; padding: 8px 0; outline: none; resize: vertical; }
+#v2-root .v2-field:focus { border-bottom-color: #F4F2EC; }
+#v2-root .v2-tile img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+#v2-root .v2-live:hover img { transform: scale(1.03); }
+#v2-root .v2-home-tile .v2-tile-fade { opacity: 0.55; transition: opacity .35s ease; }
+#v2-root .v2-home-tile:hover .v2-tile-fade { opacity: 1; }
+/* Name sits alone at the bottom; on hover the work areas rise in underneath and lift it. */
+#v2-root .v2-home-tile .v2-tile-tags { max-height: 0; opacity: 0; transform: translateY(14px); overflow: hidden; transition: max-height .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease, transform .45s cubic-bezier(.2,.7,.2,1); }
+#v2-root .v2-home-tile:hover .v2-tile-tags { max-height: 3em; opacity: 1; transform: none; }
+#v2-root .v2-card.v2-home-tile:hover .v2-tile-tags { max-height: 8em; }
+#v2-root .v2-card { transition: border-color .3s ease; }
+#v2-root .v2-card.v2-live:hover { border-color: #F4F2EC; }
+#v2-root .v2-tile-vid { opacity: 0; transition: opacity .35s ease; }
+#v2-root .v2-tile:hover .v2-tile-vid { opacity: 1; }
+#v2-root .v2-tile-tags { opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease; }
+#v2-root .v2-tile:hover .v2-tile-tags { opacity: 1; transform: none; }
+#v2-root .v2-next-arrow { display: inline-block; transition: transform .3s ease, color .3s ease; }
+#v2-root .v2-next:hover .v2-next-arrow { transform: translateX(8px); }
+#v2-root .v2-office-city { transition: color .3s ease; }
+#v2-root .v2-office:hover .v2-office-city { color: var(--v2-red); }
+#v2-root .v2-next-name, #v2-root .v2-next-name span { transition: color .3s ease; }
+#v2-root .v2-next:hover .v2-next-name, #v2-root .v2-next:hover .v2-next-name span { color: var(--v2-red) !important; }
+@keyframes v2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+#v2-root .v2-marquee { animation: v2-marquee 40s linear infinite; }
+@media (prefers-reduced-motion: reduce) { #v2-root .v2-marquee { animation: none; } #v2-root [data-v2="sticker"] { transform: rotate(-8deg) !important; opacity: 1 !important; } }
+@media (max-width: 900px) {
+  #v2-root [data-v2="grid"], #v2-root [data-v2="grid3"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  #v2-root [data-v2="about"], #v2-root [data-v2="about-head"], #v2-root [data-v2="founders"] { grid-template-columns: 1fr !important; }
+  #v2-root [data-v2="team"], #v2-root [data-v2="collage"], #v2-root [data-v2="archive"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  /* Work grid keeps its 3 columns on every screen, just tighter */
+  #v2-root [data-v2="featured"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; padding: 0 16px !important; gap: 10px !important; }
+  #v2-root [data-v2="featured"] div[style*="left: 24px"] { left: 12px !important; right: 12px !important; bottom: 12px !important; }
+  #v2-root [data-v2="featured"] [data-v2="card-name"] { font-size: clamp(17px, 5vw, 28px) !important; line-height: 1.05 !important; }
+  #v2-root [data-v2="featured"] .v2-tile-tags { display: none !important; }
+}
+@media (max-width: 900px) {
+  #v2-root [data-v2="connect"] { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; }
+  #v2-root [data-v2="connect"] > div:last-child { grid-column: 1 / -1; justify-content: flex-start !important; }
+}
+@media (max-width: 900px) {
+  #v2-root [data-v2="footer"] { justify-content: center !important; padding: 16px 24px !important; }
+}
+@media (max-width: 760px) {
+  /* clients: sticker beside the scroll, same as desktop */
+  #v2-root [data-v2="clients"] > div:first-child { min-width: 0 !important; padding: 0 4px 0 12px !important; }
+  #v2-root [data-v2="sticker"] { width: 118px !important; }
+  #v2-root [data-v2="sticker"] > span { font-size: 15px !important; -webkit-text-stroke: 0.2px currentColor; paint-order: stroke fill; }
+  #v2-root [data-v2="clients"] > div:last-child { padding: 28px 0 !important; }
+  #v2-root [data-v2="clients"] .v2-marquee { gap: 56px !important; padding-left: 32px !important; }
+  #v2-root [data-v2="clients"] img { height: 30px !important; }
+  /* home mosaic keeps its desktop arrangement, just scaled down */
+  #v2-root [data-v2="mosaic5"] { grid-auto-rows: 44vw !important; gap: 8px !important; padding: 24px 0 0 !important; }
+  #v2-root [data-v2="tile-cap"] { left: 12px !important; right: 12px !important; bottom: 12px !important; gap: 3px !important; }
+  #v2-root [data-v2="tile-name"] { font-size: clamp(17px, 4.6vw, 22px) !important; }
+  #v2-root [data-v2="tile-cap"] .v2-tile-tags { display: none !important; }
+}
+@media (max-width: 560px) {
+  #v2-root [data-v2="about-photo"] { padding: 0 20px !important; }
+  #v2-root [data-v2="about-photo"] > div { aspect-ratio: 16 / 9 !important; }
+  #v2-root [data-v2="grid"], #v2-root [data-v2="grid3"] { grid-template-columns: 1fr !important; }
+  #v2-root header { padding: 8px 20px !important; }
+  #v2-root [data-v2="logo"] { width: 104px !important; height: 52px !important; }
+  #v2-root header nav { gap: 18px !important; }
+  #v2-root header[data-v2="nav"] { padding: 8px 20px 28px !important; }
+  #v2-root .v2-nav-link { font-size: 18px; }
+  #v2-root section, #v2-root footer { padding-left: 20px !important; padding-right: 20px !important; }
+  #v2-root [data-v2="connect"] { grid-template-columns: 1fr !important; }
+  #v2-root [data-v2="pnext"] { padding: 22px 20px !important; }
+  #v2-root [data-v2="artistscroll"] > div { display: flex !important; flex-direction: column-reverse !important; align-items: center !important; justify-content: center !important; gap: 20px !important; padding-top: 80px !important; }
+  #v2-root [data-v2="artistscroll-names"] { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 4px 14px !important; }
+  #v2-root [data-v2="artistscroll-names"] > div { font-size: 18px !important; }
+  #v2-root [data-v2="scu-hero"] { height: 74vh !important; }
+  #v2-root [data-wc-hero] { height: 72vh !important; }
+  #v2-root [data-scu-main] img { transform: scale(1.45) translateX(9%) !important; transform-origin: 47% 12% !important; object-position: 47% 0% !important; }
+  #v2-root [data-v2="phero"] { height: auto !important; aspect-ratio: 1 / 1; }
+  #v2-root [data-v2="phero"][data-yt] { aspect-ratio: 16 / 9; }
+  #v2-root [data-v2="phero"][data-yt] iframe { inset: 0 !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; transform: none !important; pointer-events: auto !important; }
+  #v2-root [data-v2="pintro"], #v2-root [data-v2="plangs"], #v2-root [data-v2="psocial"], #v2-root [data-v2="ptwo"], #v2-root [data-v2="pnext"] { grid-template-columns: 1fr !important; }
+  #v2-root [data-v2="ptags"] { justify-content: flex-start !important; }
+  #v2-root [data-v2="pside"], #v2-root [data-v2="pcredit"] { align-items: flex-start !important; text-align: left !important; }
+  #v2-root [data-v2="pcards"], #v2-root [data-v2="partists"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  #v2-root [data-v2="masonry"], #v2-root [data-v2="masonry"] > div { gap: 10px !important; }
+  #v2-root [data-v2="scu-hero"][data-fit="wide"] { height: auto !important; aspect-ratio: 1 / 1; }
+  #v2-root [data-v2="scu-hero"][data-fit="crowd"] { height: auto !important; aspect-ratio: 4 / 3; }
+  #v2-root [data-v2="scu-hero"][data-fit="crowd"] img { top: 0 !important; height: 100% !important; transform: none !important; object-position: 44% 62% !important; }
+  #v2-root [data-v2="scu-hero"][data-fit="wide"] img { top: 0 !important; height: 100% !important; transform: scale(1.5) !important; transform-origin: 55% 0% !important; object-position: 50% 30% !important; }
+  #v2-root [data-v2="join"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+  #v2-root [data-v2="psocial"] > :first-child { width: 70% !important; margin: 0 auto; }
+  #v2-root [data-v2="prow"] { gap: 10px !important; }
+  #v2-root [data-v2="connect-title"] { white-space: normal !important; font-size: clamp(32px, 8vw, 44px) !important; }
+  #v2-root [data-v2="br-desk"] { display: none; }
+  #v2-root [data-v2="contact-head"] { grid-template-columns: 1fr !important; }
+  #v2-root [data-v2="contact-bo"] { height: 160px !important; margin-right: 0 !important; }
+  #v2-root [data-v2="contact-page"] { min-height: 0 !important; padding: 120px 20px 48px !important; }
+  #v2-root [data-v2="contact-head"] { flex: none !important; min-height: 0 !important; }
+  #v2-root [data-v2="contact-bo"] img { object-position: left center !important; }
+  #v2-root [data-v2="archive"] { grid-template-columns: 1fr !important; }
+  #v2-root [data-v2="featured"] > div { grid-column: auto !important; }
+  #v2-root [data-v2="filters"] { padding: 0 20px 32px !important; }
+  #v2-root [data-v2="connect-bo"] { width: 140px !important; }
+  /* home */
+  #v2-root section[data-v2-hero] { height: max(240px, calc(100svh - var(--v2-stmt-h, 300px))) !important; min-height: 0 !important; }
+  #v2-root [data-v2="statement"] { padding-top: 48px !important; padding-bottom: 28px !important; }
+  #v2-root [data-v2="statement"] h1 { font-size: clamp(30px, 8.6vw, 38px) !important; line-height: 1.08 !important; }
+  #v2-root [data-v2="about"] { gap: 24px !important; padding-top: 40px !important; padding-bottom: 56px !important; }
+  #v2-root [data-v2="about"] p { font-size: clamp(20px, 5.6vw, 24px) !important; line-height: 1.18 !important; }
+  #v2-root [data-v2="about"] > div:last-child { gap: 18px !important; }
+  /* Bo column no longer pulls past the gutter */
+  #v2-root [data-v2="connect"] > div:last-child { margin-left: 0 !important; }
+  /* home bike: full width under the addresses, wheels on the section's bottom edge */
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) { gap: 32px !important; padding-bottom: 32px !important; }
+  #v2-root [data-v2="connect"] > div:last-child:has([data-v2="connect-bike"]) { padding-bottom: 0 !important; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) [data-v2="connect-offices"] { flex-direction: row !important; gap: 24px !important; padding-bottom: 0 !important; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) [data-v2="connect-offices"] > * { flex: 1 1 0; min-width: 0; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) .v2-office > div:last-child { font-size: 13px !important; }
+  /* the art fills ~19.5%–89% of the 16:9 frame: pull the empty bands back so gaps match the 32px rhythm */
+  #v2-root [data-v2="connect-bike"] { width: 100vw !important; max-width: none !important; margin: calc(100vw * 0.5625 * -0.195 + 32px) -20px calc(100vw * 0.5625 * -0.11 + 8px) !important; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) { overflow-x: clip; }
+  /* Contact bike: sit inside the column at 16:9 */
+  #v2-root [data-v2="contact-bo"] { height: auto !important; }
+  #v2-root [data-v2="contact-bo"] > div { position: relative !important; inset: auto !important; height: auto !important; width: 100% !important; max-width: 100% !important; transform: none !important; }
+  /* Legacy case studies (World Cup, Sound CU, Somethings film) */
+  #v2-root [data-wd="head"] { flex-direction: column !important; gap: 24px !important; padding: 56px 20px 40px !important; }
+  #v2-root [data-wd="head"] > div:last-child { justify-content: flex-start !important; max-width: none !important; padding-top: 0 !important; }
+  #v2-root [data-wd="ttl"] { font-size: clamp(40px, 11vw, 52px) !important; line-height: 1.04 !important; }
+  #v2-root [data-wd="band"] { padding-left: 20px !important; padding-right: 20px !important; padding-top: 48px !important; padding-bottom: 48px !important; }
+  #v2-root [data-wd="two"] { grid-template-columns: 1fr !important; gap: 14px !important; }
+  #v2-root [data-wd="m12"] { grid-template-columns: 1fr !important; gap: 10px !important; }
+  #v2-root [data-wd="m12"] > div { grid-column: 1 / -1 !important; }
+  #v2-root [data-wd="m12"] > div[style*="position: relative"] { aspect-ratio: 4 / 5; }
+  #v2-root [data-wd="m6"] { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  #v2-root [data-wd="m6"] > * { grid-column: span 1 !important; aspect-ratio: 4 / 5 !important; }
+  #v2-root [data-wd="cuts"] { grid-template-columns: 1fr !important; padding: 0 20px 48px !important; }
+  /* Event pages */
+  #v2-root [data-evd="titlewrap"] { padding: 72px 20px 40px !important; }
+  #v2-root [data-evd="title"] { flex-direction: column !important; gap: 24px !important; }
+  #v2-root [data-evd="title"] > div { max-width: 100% !important; min-width: 0 !important; }
+  #v2-root [data-evd="title"] > div:last-child { justify-content: flex-start !important; max-width: none !important; padding-top: 0 !important; }
+  #v2-root [data-evd="ttl"] { font-size: clamp(40px, 11vw, 52px) !important; line-height: 1.04 !important; }
+  #v2-root div:has(> [data-evd="mosaic"]), #v2-root div:has(> [data-evd="stills"]) { padding-left: 20px !important; padding-right: 20px !important; padding-top: 48px !important; padding-bottom: 48px !important; }
+  #v2-root [data-evd="mosaic"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; grid-auto-rows: 54vw !important; gap: 10px !important; }
+  #v2-root [data-evd="mosaic"] > * { grid-column: span 1 !important; grid-row: span 1 !important; }
+  #v2-root [data-evd="mosaic"] > *:nth-child(3n+1) { grid-column: span 2 !important; }
+  #v2-root [data-evd="stills"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 10px !important; }
+  #v2-root [data-evd="stills"][data-count="1"] { grid-template-columns: 1fr !important; }
+  #v2-root [data-evd="phones"] { flex-direction: column !important; gap: 40px !important; padding: 56px 0 !important; }
+  #v2-root [data-evd="vhero"] { padding: 48px 20px !important; }
+  /* tags column had a 400px flex-basis, which became a 400px-tall gap once the title stacked */
+  #v2-root [data-evd="title"] > div:last-child { flex: none !important; }
+  #v2-root [data-evd="titlewrap"] { padding-bottom: 32px !important; }
+  /* no hanging tiles: a lone last item spans the full row */
+  #v2-root [data-evd="mosaic"] > *:nth-child(3n+2):last-child { grid-column: span 2 !important; }
+  #v2-root [data-evd="stills"]:not([data-count="1"]) > :last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 4 / 3 !important; }
+  #v2-root :is([data-v2="collage"], [data-v2="archive"], [data-v2="team"], [data-v2="pcards"], [data-v2="partists"]) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* Have a project idea? / Got an event coming up? on narrow screens: same three columns as desktop, scaled down */
+@media (max-width: 900px) {
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,0.75fr) !important; column-gap: 16px !important; row-gap: 0 !important; align-items: end !important; padding: 48px 20px 40px !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child { display: flex !important; gap: 22px !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) [data-v2="connect-title"] { white-space: normal !important; font-size: clamp(24px, 6.6vw, 40px) !important; line-height: 1.02 !important; text-wrap: balance; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > p { font-size: 13px !important; margin: -8px 0 0 !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child { flex-direction: column !important; gap: 14px !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child .v2-pill { font-size: 12px !important; padding: 9px 14px !important; height: auto !important; min-height: 0 !important; line-height: 1.2 !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :first-child { height: auto !important; line-height: 0; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(2), #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(2) * { font-size: clamp(11px, 3.3vw, 16px) !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) { width: 100% !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) svg, #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) img { width: clamp(20px, 6vw, 30px) !important; height: clamp(20px, 6vw, 30px) !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) [data-v2="connect-offices"] { flex-direction: column !important; gap: 16px !important; padding: 0 0 4px !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) .v2-office-city { font-size: clamp(16px, 4.6vw, 26px) !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) .v2-office > div:last-child { font-size: clamp(11px, 2.9vw, 13px) !important; white-space: normal !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:last-child { grid-column: auto !important; grid-row: auto !important; position: static !important; margin: 0 !important; padding: 0 0 4px !important; align-self: end !important; justify-content: center !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) [data-v2="connect-bo"] { width: 100% !important; transform: none !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child { min-width: 0; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) > * { justify-content: flex-start !important; gap: 10px !important; }
+  #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) a { width: auto !important; height: auto !important; min-width: 0 !important; min-height: 0 !important; padding: 0 !important; }
+}
+</style>
+</helmet>
+<div id="v2-root"></div>
+</x-dc>
+</body>
+</html>
