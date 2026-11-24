@@ -168,6 +168,8 @@ html, body { margin: 0; background: #0F0E0D; }
 }
 @media (max-width: 900px) {
   #v2-root [data-v2="footer"] { justify-content: center !important; padding: 16px 24px !important; }
+  #v2-root [data-v2="footer-links"] { flex-wrap: nowrap !important; justify-content: center !important; gap: 2px clamp(14px, 4.5vw, 32px) !important; }
+  #v2-root [data-v2="footer-links"] a { font-size: clamp(19px, 5.6vw, 26px) !important; white-space: nowrap; }
 }
 @media (max-width: 760px) {
   /* clients: sticker beside the scroll, same as desktop */

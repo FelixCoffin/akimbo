@@ -135,7 +135,7 @@ function V2Footer({ onNav }) {
         <span style={{ display: "block", width: "120px", height: "60px", overflow: "hidden", position: "relative", flex: "none" }}>
           <img src="assets/bo-head-logo-full-beige.png" alt="Akimbo Creative Haus" style={{ position: "absolute", left: "-20.36%", top: "-90.48%", width: "140.72%", maxWidth: "none", height: "auto", filter: "brightness(0) invert(0.93) sepia(0.1)" }} />
         </span>
-        <nav style={{ display: "flex", flexWrap: "wrap", gap: "2px 32px" }}>
+        <nav data-v2="footer-links" style={{ display: "flex", flexWrap: "wrap", gap: "2px 32px" }}>
           {fl("work", "Work")}{fl("about", "About")}{fl("contact", "Contact")}{fl("partners", "Partners")}
         </nav>
         <Socials size={24} />
