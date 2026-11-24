@@ -1,0 +1,71 @@
+/* ============================================================
+   AKIMBO CREATIVE HAUS — COLOR TOKENS
+   Warm light paper + a single darker mark is the default.
+   A single wordmark / Bo is ONE color only. Use the full palette
+   together sparingly. THERE IS NO YELLOW, EVER.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---- */
+  --akimbo-red:    #B74132; /* primary accent: headers, the 3px rule, links, callout borders */
+  --akimbo-cream:  #FFFDE6; /* primary brand color — beige paper mark, light-on-dark text */
+  --akimbo-black:  #333132; /* warm charcoal — body text (brand "black") */
+  --akimbo-white:  #FFFFFF; /* paper / primary background */
+
+  /* ---- Secondary & neutrals ---- */
+  --akimbo-green:  #094A24; /* deep forest secondary — tags, rules, hovers */
+  --charcoal:      #2B2A28; /* warm near-black — dark-slide / dark-band background */
+  --warm-grey:     #58534C; /* labels / secondary text */
+  --muted-grey:    #8A857D; /* footer / small print */
+
+  /* ---- Tints, deep & pressed variants ---- */
+  --red-tint:      #F4E7E4; /* faint warm callout fill (red @ ~12%) */
+  --red-deep:      #98352A; /* pressed / hover-darken of red */
+  --green-tint:    #E4ECE6; /* faint green fill */
+  --green-deep:    #05331A; /* darkest forest — dark-slide / dark-band background */
+  --hairline:      #E5E1D7; /* warm hairline on paper */
+  --hairline-grey: #D8D4CB; /* slightly stronger divider */
+  --paper-shade:   #FBFAF4; /* barely-warm off-white panel on white */
+  --cream-deep:    #F5EFD4; /* deeper warm paper when beige needs to read as a fill */
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+
+  /* Text */
+  --text-body:        var(--akimbo-black);
+  --text-label:       var(--warm-grey);
+  --text-muted:       var(--muted-grey);
+  --text-accent:      var(--akimbo-red);
+  --text-on-dark:     var(--akimbo-cream);
+  --text-on-dark-dim: color-mix(in srgb, var(--akimbo-cream) 64%, transparent);
+
+  /* Surfaces */
+  --surface-paper:    var(--akimbo-white);
+  --surface-panel:    var(--paper-shade);
+  --surface-card:     var(--akimbo-white);
+  --surface-callout:  var(--red-tint);
+  --surface-dark:     var(--charcoal);
+  --surface-forest:   var(--green-deep);
+  --surface-statement: var(--akimbo-red);
+  --surface-dark-alt: var(--akimbo-black);
+
+  /* Lines & accents */
+  --rule-accent:  var(--akimbo-red);   /* the 3px red rule */
+  --border-card:  var(--hairline-grey);
+  --divider:      var(--hairline);
+  --link:         var(--akimbo-red);
+  --link-hover:   var(--red-deep);
+
+  /* Interaction */
+  --press-darken: var(--red-deep);
+
+  /* ---- Buttons (locked) ---- */
+  /* On light/paper grounds buttons are RED (primary) or CHARCOAL (charcoal) — never green. */
+  --btn-red:          var(--akimbo-red);    /* primary button fill on light grounds */
+  --btn-charcoal:     var(--charcoal);      /* alternate dark button fill on light grounds */
+  --btn-primary-bg:   var(--btn-red);
+  --btn-primary-text: var(--akimbo-cream);
+  --btn-charcoal-text: var(--akimbo-cream);
+  --btn-on-dark-border: var(--akimbo-cream);
+}
