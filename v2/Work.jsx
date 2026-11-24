@@ -31,10 +31,22 @@ function V2Tile({ item, onOpen, fill }) {
   const [src, setSrc] = React.useState(null);
   const enter = () => { if (item.video) { setSrc(item.video); setTimeout(() => { const v = vid.current; if (v) { v.muted = true; v.play().catch(() => {}); } }, 30); } };
   const leave = () => { const v = vid.current; if (v) v.pause(); };
+  // Touch screens have no hover: the first tap plays the clip and shows the hover state, the second tap opens the project.
+  const [on, setOn] = React.useState(false);
+  React.useEffect(() => {
+    const off = (e) => { if (e.detail !== item.id) { setOn(false); leave(); } };
+    window.addEventListener("v2-tile-on", off);
+    return () => window.removeEventListener("v2-tile-on", off);
+  }, [item.id]);
+  const tap = (e) => {
+    const touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
+    if (touch && item.video && !on) { e.preventDefault(); setOn(true); enter(); window.dispatchEvent(new CustomEvent("v2-tile-on", { detail: item.id })); return; }
+    onOpen && onOpen();
+  };
   const live = item.kind !== "none";
   const sans = "var(--v2-sans)";
   return (
-    <div className={"v2-tile v2-home-tile" + (live ? " v2-live" : "")} onMouseEnter={enter} onMouseLeave={leave} onClick={live ? onOpen : undefined} style={{ position: "relative", borderRadius: "clamp(12px, 1.4vw, 20px)", overflow: "hidden", isolation: "isolate", aspectRatio: fill ? "auto" : "3 / 4", height: fill ? "100%" : "auto", overflow: "hidden", background: "#1A1918", cursor: live ? "pointer" : "default" }}>
+    <div className={"v2-tile v2-home-tile" + (live ? " v2-live" : "") + (on ? " v2-on" : "")} onMouseEnter={enter} onMouseLeave={leave} onClick={live ? tap : undefined} style={{ position: "relative", borderRadius: "clamp(12px, 1.4vw, 20px)", overflow: "hidden", isolation: "isolate", aspectRatio: fill ? "auto" : "3 / 4", height: fill ? "100%" : "auto", overflow: "hidden", background: "#1A1918", cursor: live ? "pointer" : "default" }}>
       {item.img
         ? <img src={item.img} alt={item.client + ": " + item.project} loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: item.pos || "50% 50%" }} />
         : <image-slot id={"v2-tile-" + item.id} placeholder={item.client + " cover"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }}></image-slot>}
@@ -79,9 +91,21 @@ function V2Card({ item, ratio, onOpen, small }) {
   const live = item.kind !== "none";
   const enter = () => { if (item.video) { setSrc(item.video); setTimeout(() => { const v = vid.current; if (v) { v.muted = true; v.play().catch(() => {}); } }, 30); } };
   const leave = () => { const v = vid.current; if (v) v.pause(); };
+  // Touch screens have no hover: the first tap plays the clip and shows the hover state, the second tap opens the project.
+  const [on, setOn] = React.useState(false);
+  React.useEffect(() => {
+    const off = (e) => { if (e.detail !== item.id) { setOn(false); leave(); } };
+    window.addEventListener("v2-tile-on", off);
+    return () => window.removeEventListener("v2-tile-on", off);
+  }, [item.id]);
+  const tap = (e) => {
+    const touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
+    if (touch && item.video && !on) { e.preventDefault(); setOn(true); enter(); window.dispatchEvent(new CustomEvent("v2-tile-on", { detail: item.id })); return; }
+    onOpen && onOpen();
+  };
   const sans = "var(--v2-sans)";
   return (
-    <div className={"v2-tile v2-home-tile v2-card" + (live ? " v2-live" : "")} onMouseEnter={enter} onMouseLeave={leave} onClick={live ? onOpen : undefined}
+    <div className={"v2-tile v2-home-tile v2-card" + (live ? " v2-live" : "") + (on ? " v2-on" : "")} onMouseEnter={enter} onMouseLeave={leave} onClick={live ? tap : undefined}
       style={{ position: "relative", aspectRatio: ratio, overflow: "hidden", borderRadius: small ? "10px" : "14px", background: "#1A1918", cursor: live ? "pointer" : "default" }}>
       {item.img
         ? <img src={item.img} alt={item.client + ": " + item.project} loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: item.pos || "50% 50%" }} />

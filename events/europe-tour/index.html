@@ -11,6 +11,10 @@
 <helmet>
 <title>Macklemore: Europe tour | Akimbo Creative Haus</title>
 <meta name="description" content="Coverage across two tour dates in the register Macklemore already puts out. High quality, curated, and built for social.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0F0E0D">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Akimbo Creative Haus">
@@ -143,6 +147,11 @@ html, body { margin: 0; background: #0F0E0D; }
 #v2-root .v2-tile:hover .v2-tile-vid { opacity: 1; }
 #v2-root .v2-tile-tags { opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease; }
 #v2-root .v2-tile:hover .v2-tile-tags { opacity: 1; transform: none; }
+#v2-root .v2-live.v2-on img { transform: scale(1.03); }
+#v2-root .v2-home-tile.v2-on .v2-tile-fade { opacity: 1; }
+#v2-root .v2-home-tile.v2-on .v2-tile-tags { max-height: 3em; opacity: 1; transform: none; }
+#v2-root .v2-card.v2-home-tile.v2-on .v2-tile-tags { max-height: 8em; }
+#v2-root .v2-tile.v2-on .v2-tile-vid { opacity: 1; }
 #v2-root .v2-next-arrow { display: inline-block; transition: transform .3s ease, color .3s ease; }
 #v2-root .v2-next:hover .v2-next-arrow { transform: translateX(8px); }
 #v2-root .v2-office-city { transition: color .3s ease; }
@@ -305,6 +314,17 @@ html, body { margin: 0; background: #0F0E0D; }
   #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child { min-width: 0; }
   #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) > * { justify-content: flex-start !important; gap: 10px !important; }
   #v2-root section[data-v2="connect"]:not(:has([data-v2="connect-bike"])) > div:first-child > div:last-child > :nth-child(3) a { width: auto !important; height: auto !important; min-width: 0 !important; min-height: 0 !important; padding: 0 !important; }
+}
+/* small tablets: same full-width bike as phones, so it doesn't shrink into the address column */
+@media (min-width: 561px) and (max-width: 760px) {
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) { gap: 32px !important; padding-bottom: 32px !important; }
+  #v2-root [data-v2="connect"] > div:last-child:has([data-v2="connect-bike"]) { padding-bottom: 0 !important; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) [data-v2="connect-offices"] { flex-direction: row !important; gap: 24px !important; padding-bottom: 0 !important; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) [data-v2="connect-offices"] > * { flex: 1 1 0; min-width: 0; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) .v2-office > div:last-child { font-size: 13px !important; }
+  /* the art fills ~19.5%–89% of the 16:9 frame: pull the empty bands back so gaps match the 32px rhythm */
+  #v2-root [data-v2="connect-bike"] { width: 100vw !important; max-width: none !important; margin: calc(100vw * 0.5625 * -0.195 + 32px) -20px calc(100vw * 0.5625 * -0.11 + 8px) !important; }
+  #v2-root [data-v2="connect"]:has([data-v2="connect-bike"]) { overflow-x: clip; }
 }
 </style>
 </helmet>
