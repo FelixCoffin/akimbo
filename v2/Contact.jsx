@@ -42,6 +42,14 @@ function V2Contact({ onNav }) {
   const [news, setNews] = React.useState(false);
   const [meet, setMeet] = React.useState(false);
   const [footH, setFootH] = React.useState(0);
+  // On phones the forms open right under the buttons instead of below the bike animation.
+  const [narrow, setNarrow] = React.useState(() => window.matchMedia("(max-width: 760px)").matches);
+  React.useEffect(() => { const m = window.matchMedia("(max-width: 760px)"); const f = () => setNarrow(m.matches); m.addEventListener("change", f); return () => m.removeEventListener("change", f); }, []);
+  const forms = () => (<React.Fragment>
+      {ask && <V2HubSpotForm />}
+      {meet && <V2Meetings />}
+      {news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : null)}
+    </React.Fragment>);
   React.useEffect(() => {
     const measure = () => { const f = document.querySelector("#v2-root footer"); if (f) setFootH(Math.round(f.getBoundingClientRect().height)); };
     measure();
@@ -59,6 +67,7 @@ function V2Contact({ onNav }) {
             <a href="/book" onClick={(e) => { e.preventDefault(); setAsk(false); setNews(false); setMeet(!meet); }} className={"v2-pill" + (meet ? " v2-pill-on" : "")}>Schedule meeting</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setAsk(false); setMeet(false); setNews(!news); }} className={"v2-pill" + (news ? " v2-pill-on" : "")}>Join our newsletter</a>
           </div>
+          {narrow && (ask || meet || news) && <div data-v2="contact-forms-inline" style={{ marginTop: "-28px" }}>{forms()}</div>}
           <div data-v2="contact-email" style={{ paddingTop: "12px" }}><window.V2CopyEmail size={24} /></div>
         </div>
         <div data-v2="contact-bo" style={{ position: "relative", minHeight: "1px", marginRight: "clamp(24px, 4vw, 72px)" }}>
@@ -67,9 +76,9 @@ function V2Contact({ onNav }) {
           </div>
         </div>
       </div>
-      {ask && <V2HubSpotForm />}
-      {meet && <V2Meetings />}
-      {news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : <div data-v2="newsletter-slot" style={{ maxWidth: "720px", padding: "28px 32px", border: "1px dashed var(--v2-line)", borderRadius: "14px", color: "var(--v2-dim-strong)", fontSize: "15px" }}>Newsletter sign-up form goes here.</div>)}
+      {!narrow && ask && <V2HubSpotForm />}
+      {!narrow && meet && <V2Meetings />}
+      {!narrow && news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : <div data-v2="newsletter-slot" style={{ maxWidth: "720px", padding: "28px 32px", border: "1px dashed var(--v2-line)", borderRadius: "14px", color: "var(--v2-dim-strong)", fontSize: "15px" }}>Newsletter sign-up form goes here.</div>)}
       <div data-v2="contractor-line" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "24px", borderTop: "1px solid var(--v2-line)", paddingTop: "28px" }}>
         <p style={{ margin: 0, maxWidth: "620px", fontFamily: V2.serif, fontWeight: 600, fontSize: "24px", lineHeight: 1.25 }}>Freelancer, partner agency, the most talented person in your room? <br data-v2="br-desk" /><em>Drop your work.</em></p>
         <window.V2Pill href="/partners" onClick={(e) => { e.preventDefault(); onNav("partners"); }}>Contractors and partners ↗</window.V2Pill>
