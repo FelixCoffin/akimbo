@@ -6,7 +6,7 @@ const V2 = {
   label: { fontFamily: "var(--v2-sans)", fontWeight: 500, fontSize: "12px", letterSpacing: "-0.05em", textTransform: "uppercase" },
   EMAIL: "hello@akimbo.haus",
   BOOK: "#book-a-call",
-  SOCIALS: [["IG", "https://www.instagram.com/akimbo.haus"], ["LI", "https://www.linkedin.com/company/akimbo-creative-haus/"], ["YT", "https://www.youtube.com/@akimbo.haus"]],
+  SOCIALS: [["IG", "https://www.instagram.com/akimbo.haus"], ["LI", "https://www.linkedin.com/company/akimbo-creative-haus/"], ["YT", "https://www.youtube.com/channel/UC1qu1Q1eGqZvmqEPxQEvocw"]],
 };
 window.V2 = V2;
 
