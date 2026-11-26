@@ -48,7 +48,7 @@ function V2Contact({ onNav }) {
   const forms = () => (<React.Fragment>
       {ask && <V2HubSpotForm bare />}
       {meet && <V2Meetings />}
-      {news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : null)}
+      {news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} bare /> : null)}
     </React.Fragment>);
   React.useEffect(() => {
     const measure = () => { const f = document.querySelector("#v2-root footer"); if (f) setFootH(Math.round(f.getBoundingClientRect().height)); };
@@ -78,7 +78,7 @@ function V2Contact({ onNav }) {
       </div>
       {!narrow && ask && <V2HubSpotForm bare />}
       {!narrow && meet && <V2Meetings />}
-      {!narrow && news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : <div data-v2="newsletter-slot" style={{ maxWidth: "720px", padding: "28px 32px", border: "1px dashed var(--v2-line)", borderRadius: "14px", color: "var(--v2-dim-strong)", fontSize: "15px" }}>Newsletter sign-up form goes here.</div>)}
+      {!narrow && news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} bare /> : <div data-v2="newsletter-slot" style={{ maxWidth: "720px", padding: "28px 32px", border: "1px dashed var(--v2-line)", borderRadius: "14px", color: "var(--v2-dim-strong)", fontSize: "15px" }}>Newsletter sign-up form goes here.</div>)}
       <div data-v2="contractor-line" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "24px", borderTop: "1px solid var(--v2-line)", paddingTop: "28px" }}>
         <p style={{ margin: 0, maxWidth: "620px", fontFamily: V2.serif, fontWeight: 600, fontSize: "24px", lineHeight: 1.25 }}>Freelancer, partner agency, the most talented person in your room? <br data-v2="br-desk" /><em>Drop your work.</em></p>
         <window.V2Pill href="/partners" onClick={(e) => { e.preventDefault(); onNav("partners"); }}>Contractors and partners ↗</window.V2Pill>
@@ -94,7 +94,7 @@ function V2Partners() {
     <div style={{ padding: "170px 40px 120px", display: "flex", flexDirection: "column", gap: "48px" }}>
       <h1 style={{ margin: 0, maxWidth: "1000px", fontFamily: V2.serif, fontWeight: 600, fontSize: "clamp(44px, 6vw, 92px)", lineHeight: 0.98, letterSpacing: "-0.025em" }}>We're always looking for the most talented <em>freelancers and partners</em>.</h1>
       <p style={{ margin: 0, maxWidth: "560px", fontSize: "17px", lineHeight: 1.55, color: "var(--v2-dim-strong)" }}>Drop your work and we'll bring you in when a project fits.</p>
-      <V2HubSpotForm formId={HS.contractors} />
+      <V2HubSpotForm formId={HS.contractors} bare />
     </div>
   );
 }
