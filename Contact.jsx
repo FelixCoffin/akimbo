@@ -20,7 +20,7 @@ window.V2Form = V2Form;
 // re-run each time the form mounts; it scans for .hs-form-frame and fills it in.
 // newsletter: set to the HubSpot newsletter form ID to switch the placeholder to the live form.
 const HS = { newsletter: "ff476661-959f-4cff-924a-33e48ac211bf", src: "https://js-na2.hsforms.net/forms/embed/247805217.js", region: "na2", portalId: "247805217", formId: "41719489-9ffd-4c31-90de-3c39f7544393", project: "de510ee1-9a5f-4330-b8dd-117ea9f661ad", contractors: "b7a5f623-ccbb-4f22-8a7d-89fa51251595" };
-function V2HubSpotForm({ formId }) {
+function V2HubSpotForm({ formId, bare }) {
   React.useEffect(() => {
     document.querySelectorAll('script[data-v2-hs]').forEach((s) => s.remove());
     const s = document.createElement("script");
@@ -28,7 +28,7 @@ function V2HubSpotForm({ formId }) {
     document.body.appendChild(s);
   }, []);
   return (
-    <div data-v2="hubspot" style={{ maxWidth: "900px", background: "var(--v2-white, #F4F2EC)", borderRadius: "16px", padding: "28px 28px 12px", color: "#111" }}>
+    <div data-v2="hubspot" style={bare ? { maxWidth: "900px" } : { maxWidth: "900px", background: "var(--v2-white, #F4F2EC)", borderRadius: "16px", padding: "28px 28px 12px", color: "#111" }}>
       <div className="hs-form-frame" data-region={HS.region} data-form-id={formId || HS.formId} data-portal-id={HS.portalId}></div>
     </div>
   );
@@ -46,7 +46,7 @@ function V2Contact({ onNav }) {
   const [narrow, setNarrow] = React.useState(() => window.matchMedia("(max-width: 760px)").matches);
   React.useEffect(() => { const m = window.matchMedia("(max-width: 760px)"); const f = () => setNarrow(m.matches); m.addEventListener("change", f); return () => m.removeEventListener("change", f); }, []);
   const forms = () => (<React.Fragment>
-      {ask && <V2HubSpotForm />}
+      {ask && <V2HubSpotForm bare />}
       {meet && <V2Meetings />}
       {news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : null)}
     </React.Fragment>);
@@ -76,7 +76,7 @@ function V2Contact({ onNav }) {
           </div>
         </div>
       </div>
-      {!narrow && ask && <V2HubSpotForm />}
+      {!narrow && ask && <V2HubSpotForm bare />}
       {!narrow && meet && <V2Meetings />}
       {!narrow && news && (HS.newsletter ? <V2HubSpotForm formId={HS.newsletter} /> : <div data-v2="newsletter-slot" style={{ maxWidth: "720px", padding: "28px 32px", border: "1px dashed var(--v2-line)", borderRadius: "14px", color: "var(--v2-dim-strong)", fontSize: "15px" }}>Newsletter sign-up form goes here.</div>)}
       <div data-v2="contractor-line" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "24px", borderTop: "1px solid var(--v2-line)", paddingTop: "28px" }}>
